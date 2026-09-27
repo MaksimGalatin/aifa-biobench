@@ -142,10 +142,12 @@ Then check the files against the stamped manifest **before** running anything:
 sha256sum -c --ignore-missing results/MANIFEST_2026-09-23.sha256
 ```
 
-In this repository **56 of the manifest's files are present, and all 56 match** (checked on 27.09.2026).
-The other 53 lines are files that live in the paid repository — the engine (13), the benchmark scripts (33)
-and the browser search file (1) — plus two withdrawn legacy results, the original README and three
-note lines about the FlyWire source files. The scripts write fresh runs to `bench/results/` (ignored by git)
+Checked on a fresh clone on 27.09.2026: **56 OK and 1 FAILED — `README.md`.** The manifest stamps the
+README of the full repository as it was on 23.09; this README is a new text written for the open part,
+so it cannot match. All 56 result, methodology and script files that are present match. The other 52
+lines refer to files that live in the paid repository — the engine (13), the benchmark scripts (33) and the
+browser search file (1) — plus two withdrawn legacy results and three note lines about the FlyWire
+source files; `--ignore-missing` skips them. The scripts write fresh runs to `bench/results/` (ignored by git)
 or over their file in `results/`; `git restore results/` brings back the stamped version.
 
 ## Not measured / withdrawn
