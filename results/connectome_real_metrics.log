@@ -1,0 +1,63 @@
+{
+  "benchmark": "AIfa-BioBench \u2014 real FlyWire v783 connectome metrics",
+  "source": {
+    "zenodo_record": "10.5281/zenodo.10676866",
+    "license": "CC BY 4.0",
+    "md5": {
+      "proofread_connections_783.feather": "f48f972d262323a102aed49af1396b8a",
+      "proofread_root_ids_783.npy": "e0e6c19732fd8c7a4e39a2d170105421"
+    },
+    "columns": [
+      "pre_pt_root_id",
+      "post_pt_root_id",
+      "neuropil",
+      "syn_count",
+      "gaba_avg",
+      "ach_avg",
+      "glut_avg",
+      "oct_avg",
+      "ser_avg",
+      "da_avg"
+    ]
+  },
+  "counts": {
+    "proofread_neurons": 139255,
+    "edge_rows_by_neuropil": 16847997,
+    "unique_directed_pairs": 15091983,
+    "total_synapses": 54492922,
+    "directed_pairs_ge_5_synapses": 2700513,
+    "undirected_edges_ge_5_synapses": 2511789
+  },
+  "weights": {
+    "lognormal_shape": 0.8882833497560998,
+    "lognormal_scale": 2.0205555560279254,
+    "ks_distance_vs_lognormal": 0.2824597189363452,
+    "median_synapses_per_pair": 2.0,
+    "max_synapses_per_pair": 2405
+  },
+  "topology_thresholded_undirected": {
+    "avg_local_clustering": 0.16034184173447988,
+    "clustering_sample_nodes": 3000,
+    "characteristic_path_length": 4.028191209918374,
+    "path_bfs_sources": 150,
+    "mean_reachable_nodes_per_source": 128066.16,
+    "mean_degree": 36.07466877311407,
+    "max_degree": 7795
+  },
+  "params": {
+    "threshold": 5,
+    "clust_sample": 3000,
+    "path_sources": 150,
+    "seed": 42,
+    "output": "E:\\CODE\\aifa.works\\bench\\results\\connectome_real_metrics.json"
+  },
+  "provenance": {
+    "python": "3.14.4",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "utc": "2026-09-23T10:52:47Z",
+    "runtime_s": 174.7
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка под эту формулу в aifa_sdk не найдено); буквальная реализация формулы карточки: A_APL=ReLU(X-Quantile_{1-k}(X)), нормировка суммой",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "honest_measurement": {
+    "sparsity_and_normalization": {
+      "mean_sparsity_fraction": 0.9492,
+      "claimed_sparsity_fraction": 0.95,
+      "mean_sum_deviation_from_1": 0.0,
+      "normalization_correct": true
+    },
+    "complexity_scaling": {
+      "latency_us_by_seq_len": {
+        "1024": 41.2,
+        "4096": 68.2,
+        "16384": 161.7,
+        "65536": 752.0,
+        "262144": 3428.4
+      },
+      "empirical_scaling_exponent_p": 0.811,
+      "interpretation": "time ~ N^0.81 (p=1.0 значит линейно O(N), p=2.0 значит квадратично O(N^2), заявлено O(N*logN), что при этом диапазоне N даёт p примерно 1.0-1.15)"
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "4.05 us",
+    "measured_p50_us_at_seqlen_512": 35.5
+  }
+}

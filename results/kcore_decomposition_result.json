@@ -1,0 +1,55 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка k-core в aifa_sdk не найдено; настоящих данных коннектома FlyWire на диске тоже нет — проверка на синтетическом графе с заданной структурой ядро+периферия, а не на реальных числах мухи k_max=78/1420 нейронов, которые без исходных данных верифицировать нельзя)",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "graph_n_core": 100,
+    "graph_n_periphery": 900
+  },
+  "honest_measurement": {
+    "found_k_max": 43,
+    "found_max_core_size": 100,
+    "overlap_with_designed_dense_core": 1.0,
+    "split_resilience": {
+      "core_survives_full_periphery_loss": true,
+      "split_at_fraction_removed_from_core": {
+        "0.05": false,
+        "0.1": false,
+        "0.2": false,
+        "0.3": false,
+        "0.4": false,
+        "0.5": false
+      },
+      "first_fraction_causing_split": null
+    },
+    "latency": {
+      "n_trials": 500,
+      "latency_p50_us": 2600.8,
+      "latency_p95_us": 3096.0
+    },
+    "complexity": {
+      "sizes_tested": [
+        200,
+        400,
+        800,
+        1600,
+        3200,
+        6400
+      ],
+      "times_seconds": [
+        0.000389,
+        0.000821,
+        0.002758,
+        0.003807,
+        0.008055,
+        0.020724
+      ],
+      "empirical_exponent_p": 1.115,
+      "claim_linear_complexity": true
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "498.10 us",
+    "measured_p50_us": 2600.8
+  },
+  "honest_note": "Заявленные числа мухи (k_max=78, 1420 нейронов) НЕ проверены — для этого нужен настоящий граф коннектома FlyWire v783, которого нет на диске. Проверен АЛГОРИТМ и заявленное СВОЙСТВО (устойчивость ядра к потере периферии) на синтетическом графе."
+}

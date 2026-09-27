@@ -1,0 +1,27 @@
+{
+  "configuration": {
+    "n_docs": 2000,
+    "n_features": 5000,
+    "n_neurons": 512,
+    "seed": 42,
+    "n_trials": 20,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "написан с нуля 21.09.2026 (готового движка под эту формулу в aifa_sdk не найдено); буквальная реализация формулы карточки: w(f_i) = log(1 + N/(df+eps)) * (1 - exp(-lambda*dt_last)), theta_prune = 0.05 * max(w)"
+  },
+  "honest_measurement": {
+    "prune_latency_p50_us": 2145.7,
+    "prune_latency_p95_us": 2713.7,
+    "prune_latency_p99_us": 2713.7,
+    "mean_pruned_synapses_pct": 24.49,
+    "weight_computation_time_ms": 7.6047,
+    "bio_idf_law_holds": true,
+    "mean_weight_rare_features": 6.862092,
+    "mean_weight_frequent_features": 0.999882
+  },
+  "claimed_metric_check": {
+    "claimed_metric": "3.29 us",
+    "claimed_pruned_pct": "72%",
+    "measured_prune_latency_p50_us": 2145.7,
+    "measured_pruned_pct": 24.49
+  }
+}

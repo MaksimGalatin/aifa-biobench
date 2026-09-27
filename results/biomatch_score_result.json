@@ -1,0 +1,54 @@
+{
+  "configuration": {
+    "n_nodes": 500,
+    "k_neighbors": 10,
+    "rewire_prob": 0.1,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "topology_model": "Watts-Strogatz small-world (не Эрдёш-Реньи — тот дал бы C~0)",
+    "engine_source": "E:/CODE/aifa-biobench/aifa_sdk/connectome_golden_standard.py (уже существовал, реализация Архитектора, не написана заново — не хватало только запускающего обвеса и синтетических данных)"
+  },
+  "report": {
+    "verdict": "NON_BIOLOGICAL_FRAGILE",
+    "composite_biomatch_score_pct": 38.89,
+    "evaluation_latency_ms": 96.181,
+    "pillars": {
+      "weight_lognorm_fit": {
+        "num_synapses": 4992,
+        "empirical_mu": 1.117,
+        "empirical_sigma": 0.858,
+        "ks_statistic": 0.0078,
+        "ks_p_value": 0.91771,
+        "is_conforming": true,
+        "score_pct": 99.22
+      },
+      "small_world_topology": {
+        "num_nodes": 500,
+        "clustering_coefficient": 0.4793,
+        "target_clustering": 0.312,
+        "small_world_ratio": 23.96,
+        "is_small_world": true,
+        "score_pct": 46.37
+      },
+      "spectral_edge_of_chaos": {
+        "spectral_radius": 4.5876,
+        "spectral_gap": 0.194,
+        "is_edge_of_chaos": false,
+        "score_pct": 0.0
+      },
+      "lesion_resilience": {
+        "ablation_ratio_pct": 20.0,
+        "nodes_remaining": 400,
+        "reachability_pct": 7.41,
+        "is_resilient": false,
+        "score_pct": 8.72
+      },
+      "bilateral_redundancy": {
+        "pearson_r": 0.4013,
+        "frobenius_distance": 335.814,
+        "is_symmetrically_redundant": false,
+        "score_pct": 40.13
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Text files are stored and checked out with LF so that results/MANIFEST_*.sha256 verifies on any OS
+* text=auto eol=lf
+*.ots binary
+*.feather binary
+*.npy binary

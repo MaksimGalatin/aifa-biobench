@@ -1,0 +1,20 @@
+{
+  "configuration": {
+    "n_neurons": 16,
+    "n_steps": 1000,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "E:/CODE/aifa-biobench/aifa_sdk/cann_focus.py (уже существовал, реализация Архитектора, класс CANNFocusRing; по умолчанию 64 нейрона, а не 16 как заявлено на карточке — этот прогон честно использует n_neurons=16, как заявлено)"
+  },
+  "honest_measurement": {
+    "latency_p50_us": 23.0,
+    "latency_p95_us": 27.9,
+    "latency_p99_us": 31.2,
+    "mean_stability_score": 0.9967,
+    "focus_locked_ratio_pct": 100.0
+  },
+  "claimed_metric_check": {
+    "claimed": "16.21 us",
+    "measured_p50_us": 23.0
+  }
+}

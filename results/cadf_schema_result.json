@@ -1,0 +1,23 @@
+{
+  "configuration": {
+    "n_components": 200,
+    "n_edges": 800,
+    "n_trials": 50,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "написан с нуля 21.09.2026 (ни стандарта CADF, ни валидатора не существовало нигде на диске — полный поиск по aifa-biobench дал 0 совпадений). Схема JSON Schema определена буквально по формуле карточки S=<V,E,T,W>, T принадлежит {Sync,Async,Inhibitory,Modulatory}, W принадлежит R+."
+  },
+  "honest_measurement": {
+    "validation_latency_p50_us": 269.4,
+    "validation_latency_p95_us": 282.8,
+    "validation_latency_p99_us": 298.7,
+    "validation_latency_p50_ms": 0.2694,
+    "valid_document_errors": 0,
+    "broken_document_errors_caught": 2,
+    "validator_correctly_rejects_invalid": true
+  },
+  "claimed_metric_check": {
+    "claimed": "2.177 ms",
+    "measured_p50_ms": 0.2694
+  }
+}

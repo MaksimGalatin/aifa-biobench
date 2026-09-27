@@ -1,0 +1,28 @@
+{
+  "configuration": {
+    "n_vectors": 5000,
+    "dim": 256,
+    "n_queries": 50,
+    "top_k": 10,
+    "pool": 100,
+    "seed": 42,
+    "protocol": "independent"
+  },
+  "metrics": {
+    "recall_1": 0.54,
+    "recall_10": 0.362,
+    "recall_100": 0.2018,
+    "precision_10": 0.362,
+    "ndcg_10": 0.5177,
+    "map": 0.362,
+    "latency_p50_ms": 8.3349,
+    "latency_p95_ms": 11.9857,
+    "latency_p99_ms": 13.1373,
+    "latency_mean_ms": 8.9468,
+    "latency_ci95_ms": 0.4277,
+    "qps": 111.8,
+    "build_time_sec": 0.0576,
+    "index_ram_mb": 8.1
+  },
+  "baseline_duel": null
+}

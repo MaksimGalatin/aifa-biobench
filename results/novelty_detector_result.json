@@ -1,0 +1,22 @@
+{
+  "configuration": {
+    "n_unique": 2000,
+    "n_duplicates": 2000,
+    "dim": 1024,
+    "seed": 42,
+    "theta_threshold": 0.92,
+    "buffer_size": 5000,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "metrics": {
+    "accuracy": 1.0,
+    "true_positive_novel": 2000,
+    "false_positive_novel": 0,
+    "true_negative_duplicate": 2000,
+    "false_negative_duplicate": 0,
+    "latency_p50_us": 1069.45,
+    "latency_p95_us": 2092.405,
+    "latency_p99_us": 2352.956,
+    "latency_mean_us": 1110.938
+  }
+}

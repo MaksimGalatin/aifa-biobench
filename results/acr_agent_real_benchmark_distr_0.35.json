@@ -1,0 +1,148 @@
+{
+  "benchmark": "ACR agent benchmark \u2014 real aifa_sdk engines, synthetic seeded website graphs",
+  "episodes_per_agent": 360,
+  "tasks": 12,
+  "environment": {
+    "max_steps": 12,
+    "distractor_rate": 0.35,
+    "cookie_rate": 1.0,
+    "n_generic": 5,
+    "n_loops": 2
+  },
+  "agents": {
+    "naive_fifo": {
+      "config": {
+        "W": 4
+      },
+      "success_rate_mean": 0.0028,
+      "success_rate_std": 0.015,
+      "mean_steps_when_successful": 10.0,
+      "wrong_click_rate": 0.9856,
+      "goal_topic_lost_per_click": 0.0,
+      "decision_latency_ms_p50": 0.0736,
+      "decision_latency_ms_p95": 0.098
+    },
+    "pinned_greedy": {
+      "config": {
+        "W": 4,
+        "pinned": true
+      },
+      "success_rate_mean": 0.0583,
+      "success_rate_std": 0.0382,
+      "mean_steps_when_successful": 5.71,
+      "wrong_click_rate": 0.9787,
+      "goal_topic_lost_per_click": 0.0,
+      "decision_latency_ms_p50": 0.0764,
+      "decision_latency_ms_p95": 0.1721
+    },
+    "acr_apl_only": {
+      "config": {
+        "W": 4,
+        "apl": true
+      },
+      "success_rate_mean": 0.0417,
+      "success_rate_std": 0.0417,
+      "mean_steps_when_successful": 3.27,
+      "wrong_click_rate": 0.9773,
+      "goal_topic_lost_per_click": 0.0,
+      "decision_latency_ms_p50": 0.0761,
+      "decision_latency_ms_p95": 0.0906
+    },
+    "acr_cann_only": {
+      "config": {
+        "W": 4,
+        "cann": true
+      },
+      "success_rate_mean": 0.0556,
+      "success_rate_std": 0.0393,
+      "mean_steps_when_successful": 5.45,
+      "wrong_click_rate": 0.9792,
+      "goal_topic_lost_per_click": 0.0248,
+      "decision_latency_ms_p50": 0.0974,
+      "decision_latency_ms_p95": 0.1147
+    },
+    "acr_apl_cann": {
+      "config": {
+        "W": 4,
+        "apl": true,
+        "cann": true
+      },
+      "success_rate_mean": 0.0139,
+      "success_rate_std": 0.0311,
+      "mean_steps_when_successful": 6.2,
+      "wrong_click_rate": 0.9918,
+      "goal_topic_lost_per_click": 0.0007,
+      "decision_latency_ms_p50": 0.0995,
+      "decision_latency_ms_p95": 0.1234
+    },
+    "acr_apl_cann_cx_as_shipped": {
+      "config": {
+        "W": 4,
+        "apl": true,
+        "cann": true,
+        "cx": true
+      },
+      "success_rate_mean": 0.0139,
+      "success_rate_std": 0.0311,
+      "mean_steps_when_successful": 6.2,
+      "wrong_click_rate": 0.9918,
+      "goal_topic_lost_per_click": 0.0007,
+      "decision_latency_ms_p50": 0.1813,
+      "decision_latency_ms_p95": 0.4353
+    },
+    "acr_apl_cann_cx_fixed": {
+      "config": {
+        "W": 4,
+        "apl": true,
+        "cann": true,
+        "cx": true,
+        "repulsion": true
+      },
+      "success_rate_mean": 0.9472,
+      "success_rate_std": 0.0548,
+      "mean_steps_when_successful": 6.23,
+      "wrong_click_rate": 0.5449,
+      "goal_topic_lost_per_click": 0.0,
+      "decision_latency_ms_p50": 0.4267,
+      "decision_latency_ms_p95": 0.5118
+    },
+    "acr_full_fixed": {
+      "config": {
+        "W": 4,
+        "apl": true,
+        "cann": true,
+        "cx": true,
+        "repulsion": true,
+        "bilateral": true
+      },
+      "success_rate_mean": 0.9361,
+      "success_rate_std": 0.0413,
+      "mean_steps_when_successful": 6.07,
+      "wrong_click_rate": 0.5405,
+      "goal_topic_lost_per_click": 0.0,
+      "decision_latency_ms_p50": 0.6804,
+      "decision_latency_ms_p95": 0.9603
+    },
+    "pinned_greedy_plus_repulsion": {
+      "config": {
+        "W": 4,
+        "pinned": true,
+        "repulsion": true
+      },
+      "success_rate_mean": 0.95,
+      "success_rate_std": 0.0553,
+      "mean_steps_when_successful": 6.16,
+      "wrong_click_rate": 0.5381,
+      "goal_topic_lost_per_click": 0.0,
+      "decision_latency_ms_p50": 0.2182,
+      "decision_latency_ms_p95": 0.2591
+    }
+  },
+  "honesty_note": "No agent outcome is drawn from a fixed probability. Environment rates (distractors, cookie duplicates, decoys, loop links) are stated above and identical for all agents.",
+  "provenance": {
+    "python": "3.14.4",
+    "numpy": "2.5.2",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "utc": "2026-09-23T10:54:59Z"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "configuration": {
+    "n_nodes_per_trial": 50,
+    "n_trials": 200,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "metrics": {
+    "tab_baseline_mean_steps": 23.54,
+    "cx_steering_mean_steps": 3.66,
+    "speedup_x": 6.43,
+    "cx_success_rate": 1.0
+  }
+}

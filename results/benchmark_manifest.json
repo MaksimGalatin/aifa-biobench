@@ -1,0 +1,21 @@
+{
+  "benchmark": "AIfa-BioBench v3.0",
+  "timestamp": "2026-09-20 14:27:11 UTC",
+  "dataset": "Synthetic-Gaussian-256D-independent",
+  "dataset_hash": "-0x296c69470866a1af",
+  "n_vectors": 5000,
+  "dim": 256,
+  "queries": 50,
+  "metric": "L2 / Hamming",
+  "k": 10,
+  "candidate_pool": 100,
+  "seed": 42,
+  "system": {
+    "platform": "Windows-11-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "machine": "AMD64",
+    "python_version": "3.14.4",
+    "numpy_version": "2.5.2",
+    "threads": 28
+  }
+}

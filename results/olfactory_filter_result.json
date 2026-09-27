@@ -1,0 +1,23 @@
+{
+  "configuration": {
+    "n_samples": 5000,
+    "seed": 42,
+    "n_patterns": 16,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "algorithm": "Aho-Corasick multi-pattern automaton (детерминированный, O(|S|) на запрос) — реализовано впервые для этой карточки, ранее на диске не существовало"
+  },
+  "honest_measurement": {
+    "latency_p50_us": 2.0,
+    "latency_p95_us": 3.0,
+    "latency_p99_us": 3.3,
+    "danger_flagged_pct": 59.46
+  },
+  "speedup_reality_check": {
+    "claimed_llm_latency_ms": 150.0,
+    "claimed_llm_latency_note": "150 мс взято с самой карточки (не измерено этим скриптом — реальный локальный LLM не запускался, чтобы не тратить вычислительные ресурсы и не рисковать случайным платным вызовом)",
+    "measured_filter_latency_us_p50": 2.0,
+    "honest_speedup_factor": 75000.0,
+    "claimed_speedup_factor_on_card": "70 000-75 000 раз (пересчитано 21.09.2026 из заявленных, не измеренных чисел карточки)",
+    "note": "Честный автомат Ахо-Корасик действительно даёт задержку в микросекундах на запись, подтверждая порядок величины заявленного ускорения, но абсолютное число зависит от реализации и оборудования — не идентично прежде заявленным 0.002-0.00204 мс."
+  }
+}

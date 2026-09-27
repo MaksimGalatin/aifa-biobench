@@ -1,0 +1,23 @@
+{
+  "configuration": {
+    "n_neurons": 256,
+    "n_steps": 3000,
+    "rho_target": 0.05,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "написан с нуля 21.09.2026 (готового движка под эту формулу в aifa_sdk не найдено); буквальная реализация формулы карточки: I_total = ACh - gamma_GABA*GABA + M_dopamine*dW, d(gamma_GABA)/dt = (1/tau_homeo)*(<s> - rho_target)"
+  },
+  "honest_measurement": {
+    "latency_p50_us": 142.2,
+    "latency_p95_us": 158.2,
+    "latency_p99_us": 185.4,
+    "mean_spike_density_last_20pct": 0.0499,
+    "target_spike_density": 0.05,
+    "homeostasis_converged": true,
+    "final_gamma_gaba": 0.6117
+  },
+  "claimed_metric_check": {
+    "claimed": "1.68 us",
+    "measured_p50_us": 142.2
+  }
+}

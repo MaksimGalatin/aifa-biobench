@@ -1,0 +1,18 @@
+{
+  "configuration": {
+    "n_neurons": 139255,
+    "n_neuropils": 78,
+    "seed": 42,
+    "note": "синтетические ID/тип/полушарие/медиатор — не реальные данные FlyWire v783",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "metrics": {
+    "build_time_sec": 1.2255,
+    "final_root_sha256": "ce7dacf9663a4b34773fd48b768aabfa3f729debca4c0fd20c2160de9bddfae3",
+    "single_subtree_verify_time_sec": 0.001622,
+    "single_subtree_verify_correct": true,
+    "tampering_detection_rate": 1.0,
+    "tampering_trials": 20
+  },
+  "external_claim_not_verified_by_this_script": "Заявление о фиксации корня в блокчейне Bitcoin (OpenTimestamps) требует внешнего сетевого запроса к ноде Bitcoin и не проверяется локальным криптографическим бенчмарком."
+}

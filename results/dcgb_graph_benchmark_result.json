@@ -1,0 +1,54 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка DCGB в aifa_sdk не найдено; настоящего датасета коннектома FlyWire на диске тоже нет). Буквальная реализация тестового пакета карточки: k-hop обход (BFS), Дейкстра, PageRank, симуляция каскада — на СИНТЕТИЧЕСКОМ графе меньшего масштаба, не на реальных 139255 узлах мухи",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "found_internal_discrepancy_before_code": {
+    "description": "Три РАЗНЫХ числа для количества синапсов/связей в ОДНОЙ карточке на русском языке, обнаружено до написания кода",
+    "bio_field_says": "3 869 878 ориентированных взвешенных связей",
+    "gain_field_says": "3.87M ребер, 50 млн синапсов",
+    "uniqueness_field_says": "54.5 млн синапсов",
+    "note": "Не исправлено произвольно — нет объективного источника, какое число верное (раздел 47 требует внешний источник правды, а не догадку)"
+  },
+  "honest_measurement": {
+    "algorithm_correctness": {
+      "n_nodes_tested": 2000,
+      "k_hop_sizes_by_depth": [
+        24,
+        363,
+        1869,
+        2000,
+        2000
+      ],
+      "k_hop_growth_monotonic": true,
+      "dijkstra_n_reachable": 2000,
+      "dijkstra_all_distances_nonnegative": true,
+      "pagerank_iterations_to_converge": 13,
+      "pagerank_sum": 1.0,
+      "pagerank_sums_to_one": true
+    },
+    "latency": {
+      "n_nodes": 2000,
+      "k": 2,
+      "latency_p50_us": 39.1,
+      "latency_p95_us": 66.2
+    },
+    "cascade_simulation_active_nodes_per_tick": [
+      3,
+      13,
+      39,
+      113,
+      300,
+      490,
+      500,
+      500,
+      500,
+      500,
+      500
+    ]
+  },
+  "claimed_metric_check": {
+    "claimed": "3.10 us",
+    "measured_p50_us": 39.1
+  }
+}

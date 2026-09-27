@@ -1,0 +1,305 @@
+{
+  "configuration": {
+    "n_runs": 1000,
+    "seed": 42,
+    "num_target_cores": 128,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "E:/CODE/aifa-biobench/aifa_sdk/neuromorphic_compiler.py (уже существовал; его собственный метод is_deadlock_free — жёсткая константа True, а не измерение — этот файл добавляет НАСТОЯЩУЮ проверку через поиск цикла в графе межъядерных зависимостей трафика)"
+  },
+  "honest_deadlock_check": {
+    "method": "поиск цикла (DFS) в графе направленных зависимостей между ядрами NoC — необходимый признак классического циклического ожидания буфера (может давать ложные срабатывания без учёта виртуальных каналов, но НЕ является константой)",
+    "runs_with_cyclic_core_dependency": 1000,
+    "runs_total": 1000,
+    "cyclic_dependency_rate_pct": 100.0,
+    "note": "Наличие цикла в графе зависимостей ядер НЕ доказывает реальный дедлок на аппаратном NoC-роутере (это зависит от политики виртуальных каналов и буферизации), но отсутствие такой проверки в исходном движке делает заявление '0 из 1000' непроверяемым по построению. Это честная замена отсутствовавшей проверки."
+  },
+  "engine_own_claim_reality_check": {
+    "engine_field": "is_deadlock_free",
+    "engine_value": "True (ЖЁСТКАЯ КОНСТАНТА в исходном коде, строка 129 neuromorphic_compiler.py — не вычисляется, не измеряется)"
+  },
+  "average_compilation_time_ms": 2.5606,
+  "sample_reports": [
+    {
+      "target_platform": "INTEL_LOIHI_2",
+      "total_neurons": 152,
+      "total_synapses": 2844,
+      "cores_utilized": 76,
+      "max_cores_available": 128,
+      "intra_core_ratio_pct": 1.09,
+      "avg_inter_core_hops": 6.88,
+      "compilation_time_ms": 2.926,
+      "aer_packet_sample": [
+        {
+          "src_core": 0,
+          "tgt_core": 3,
+          "axon_id": 6,
+          "weight_int8": 64,
+          "delay_ticks": 2,
+          "manhattan_hops": 3
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 5,
+          "axon_id": 10,
+          "weight_int8": 86,
+          "delay_ticks": 2,
+          "manhattan_hops": 5
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 14,
+          "axon_id": 29,
+          "weight_int8": 65,
+          "delay_ticks": 5,
+          "manhattan_hops": 14
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 16,
+          "axon_id": 32,
+          "weight_int8": 87,
+          "delay_ticks": 1,
+          "manhattan_hops": 1
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 18,
+          "axon_id": 37,
+          "weight_int8": 44,
+          "delay_ticks": 2,
+          "manhattan_hops": 3
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 20,
+          "axon_id": 40,
+          "weight_int8": 64,
+          "delay_ticks": 2,
+          "manhattan_hops": 5
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 21,
+          "axon_id": 42,
+          "weight_int8": 23,
+          "delay_ticks": 3,
+          "manhattan_hops": 6
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 28,
+          "axon_id": 56,
+          "weight_int8": 77,
+          "delay_ticks": 5,
+          "manhattan_hops": 13
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 29,
+          "axon_id": 58,
+          "weight_int8": 55,
+          "delay_ticks": 5,
+          "manhattan_hops": 14
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 34,
+          "axon_id": 68,
+          "weight_int8": 41,
+          "delay_ticks": 2,
+          "manhattan_hops": 4
+        }
+      ],
+      "is_deadlock_free": true,
+      "sram_footprint_kb": 11.11
+    },
+    {
+      "target_platform": "INTEL_LOIHI_2",
+      "total_neurons": 64,
+      "total_synapses": 451,
+      "cores_utilized": 64,
+      "max_cores_available": 128,
+      "intra_core_ratio_pct": 0.0,
+      "avg_inter_core_hops": 6.78,
+      "compilation_time_ms": 0.481,
+      "aer_packet_sample": [
+        {
+          "src_core": 0,
+          "tgt_core": 8,
+          "axon_id": 8,
+          "weight_int8": 45,
+          "delay_ticks": 3,
+          "manhattan_hops": 8
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 13,
+          "axon_id": 13,
+          "weight_int8": 75,
+          "delay_ticks": 5,
+          "manhattan_hops": 13
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 18,
+          "axon_id": 18,
+          "weight_int8": 38,
+          "delay_ticks": 2,
+          "manhattan_hops": 3
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 26,
+          "axon_id": 26,
+          "weight_int8": 51,
+          "delay_ticks": 4,
+          "manhattan_hops": 11
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 30,
+          "axon_id": 30,
+          "weight_int8": 72,
+          "delay_ticks": 6,
+          "manhattan_hops": 15
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 38,
+          "axon_id": 38,
+          "weight_int8": 56,
+          "delay_ticks": 3,
+          "manhattan_hops": 8
+        },
+        {
+          "src_core": 1,
+          "tgt_core": 11,
+          "axon_id": 11,
+          "weight_int8": 63,
+          "delay_ticks": 4,
+          "manhattan_hops": 10
+        },
+        {
+          "src_core": 1,
+          "tgt_core": 19,
+          "axon_id": 19,
+          "weight_int8": 89,
+          "delay_ticks": 2,
+          "manhattan_hops": 3
+        },
+        {
+          "src_core": 1,
+          "tgt_core": 22,
+          "axon_id": 22,
+          "weight_int8": 71,
+          "delay_ticks": 3,
+          "manhattan_hops": 6
+        },
+        {
+          "src_core": 1,
+          "tgt_core": 24,
+          "axon_id": 24,
+          "weight_int8": 43,
+          "delay_ticks": 3,
+          "manhattan_hops": 8
+        }
+      ],
+      "is_deadlock_free": true,
+      "sram_footprint_kb": 1.76
+    },
+    {
+      "target_platform": "INTEL_LOIHI_2",
+      "total_neurons": 238,
+      "total_synapses": 5603,
+      "cores_utilized": 119,
+      "max_cores_available": 128,
+      "intra_core_ratio_pct": 0.34,
+      "avg_inter_core_hops": 7.89,
+      "compilation_time_ms": 4.33,
+      "aer_packet_sample": [
+        {
+          "src_core": 0,
+          "tgt_core": 19,
+          "axon_id": 39,
+          "weight_int8": 44,
+          "delay_ticks": 2,
+          "manhattan_hops": 4
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 20,
+          "axon_id": 41,
+          "weight_int8": 55,
+          "delay_ticks": 2,
+          "manhattan_hops": 5
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 24,
+          "axon_id": 49,
+          "weight_int8": 71,
+          "delay_ticks": 4,
+          "manhattan_hops": 9
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 32,
+          "axon_id": 64,
+          "weight_int8": 68,
+          "delay_ticks": 1,
+          "manhattan_hops": 2
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 34,
+          "axon_id": 69,
+          "weight_int8": 102,
+          "delay_ticks": 2,
+          "manhattan_hops": 4
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 36,
+          "axon_id": 72,
+          "weight_int8": 81,
+          "delay_ticks": 3,
+          "manhattan_hops": 6
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 42,
+          "axon_id": 84,
+          "weight_int8": 69,
+          "delay_ticks": 5,
+          "manhattan_hops": 12
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 44,
+          "axon_id": 88,
+          "weight_int8": 39,
+          "delay_ticks": 5,
+          "manhattan_hops": 14
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 48,
+          "axon_id": 96,
+          "weight_int8": 94,
+          "delay_ticks": 2,
+          "manhattan_hops": 3
+        },
+        {
+          "src_core": 0,
+          "tgt_core": 52,
+          "axon_id": 104,
+          "weight_int8": 42,
+          "delay_ticks": 3,
+          "manhattan_hops": 7
+        }
+      ],
+      "is_deadlock_free": true,
+      "sram_footprint_kb": 21.89
+    }
+  ]
+}

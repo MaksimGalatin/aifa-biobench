@@ -1,0 +1,83 @@
+[
+  {
+    "dendritic_degree_d": 2,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 13.8,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 29.345,
+    "build_time_sec": 0.234,
+    "pareto_score": 0.0047
+  },
+  {
+    "dendritic_degree_d": 3,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 19.6,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 29.489,
+    "build_time_sec": 0.227,
+    "pareto_score": 0.0066
+  },
+  {
+    "dendritic_degree_d": 4,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 18.9,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 30.068,
+    "build_time_sec": 0.256,
+    "pareto_score": 0.0063
+  },
+  {
+    "dendritic_degree_d": 5,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 18.6,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 29.198,
+    "build_time_sec": 0.24,
+    "pareto_score": 0.0064
+  },
+  {
+    "dendritic_degree_d": 6,
+    "is_biological_optimum": true,
+    "recall_at_10_pct": 19.8,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 29.977,
+    "build_time_sec": 0.246,
+    "pareto_score": 0.0066
+  },
+  {
+    "dendritic_degree_d": 7,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 23.3,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 28.369,
+    "build_time_sec": 0.25,
+    "pareto_score": 0.0082
+  },
+  {
+    "dendritic_degree_d": 8,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 22.5,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 30.059,
+    "build_time_sec": 0.24,
+    "pareto_score": 0.0075
+  },
+  {
+    "dendritic_degree_d": 10,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 22.3,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 29.42,
+    "build_time_sec": 0.234,
+    "pareto_score": 0.0076
+  },
+  {
+    "dendritic_degree_d": 16,
+    "is_biological_optimum": false,
+    "recall_at_10_pct": 24.9,
+    "collision_rate_pct": 0.0,
+    "p50_latency_ms": 30.21,
+    "build_time_sec": 0.242,
+    "pareto_score": 0.0082
+  }
+]

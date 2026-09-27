@@ -1,0 +1,32 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка под эту формулу в aifa_sdk не найдено); буквальная реализация формулы карточки: dy/dt=(1/tau_y)*(f(x)-y), z=Theta(x-theta_x)*Theta(y-theta_y)",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "honest_measurement": {
+    "filter_behavior": {
+      "dt_critical_steps": 3.4657,
+      "short_pulse_duration_steps": 1,
+      "short_pulse_activates_output": false,
+      "long_pulse_duration_steps": 10,
+      "long_pulse_activates_output": true,
+      "borderline_duration_steps": 3,
+      "borderline_activates_output": false,
+      "n_trials_below_threshold": 50,
+      "false_positives_below_threshold": 0,
+      "n_trials_above_threshold": 50,
+      "false_negatives_above_threshold": 0,
+      "claim_short_pulses_fully_suppressed": true,
+      "claim_long_signals_pass_through": true
+    },
+    "latency": {
+      "latency_p50_us": 0.2,
+      "latency_p95_us": 0.3,
+      "latency_p99_us": 0.4
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "0.18 us",
+    "measured_p50_us": 0.2
+  }
+}

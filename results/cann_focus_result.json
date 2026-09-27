@@ -1,0 +1,65 @@
+{
+  "configuration": {
+    "engine_source": "НАЙДЕН существующий движок aifa_sdk/cann_focus.py, класс CANNFocusRing. КОРРЕКТНАЯ реализация заявленного механизма CANN (Mexican-hat матрица связности, population-vector декодирование) — тот же принцип, что описан в карточке. Тестировался РЕАЛЬНЫЙ движок.",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "honest_measurement": {
+    "focus_stability_without_input": {
+      "target_heading_rad": 1.5,
+      "n_steps_no_external_input": 20,
+      "angular_error_deg_trace": [
+        0.01,
+        0.01,
+        0.05,
+        0.01,
+        0.04,
+        0.01,
+        0.03,
+        0.06,
+        0.03,
+        0.01,
+        0.02,
+        0.04,
+        0.05,
+        0.05,
+        0.04,
+        0.03,
+        0.03,
+        0.02,
+        0.01,
+        0.01
+      ],
+      "final_angular_error_deg": 0.01,
+      "claim_focus_maintained_without_input": true
+    },
+    "smooth_tracking_no_jump": {
+      "n_steps": 60,
+      "target_swept_from_deg": 0.0,
+      "target_swept_to_deg": 177.0,
+      "max_single_step_jump_deg": 3.03,
+      "claim_no_sudden_jump": true,
+      "final_tracking_error_deg": 10.57,
+      "claim_smoothly_tracks_target": true
+    },
+    "fifo_comparison": {
+      "target_heading_rad": 2.0,
+      "n_noise_messages": 30,
+      "fifo_window_size": 10,
+      "cann_final_angular_error_deg": 6.91,
+      "cann_topic_still_recoverable": true,
+      "fifo_topic_visible_in_window": false,
+      "note": "Честное сравнение: FIFO буквально теряет тему за пределами окна (структурное свойство очереди), CANN удерживает её через рекуррентную динамику холма активности — разные механизмы, не число '20.5 раз', которое без специфики бенчмарка FIFO не воспроизводимо"
+    },
+    "latency": {
+      "n_trials": 2000,
+      "n_neurons": 64,
+      "latency_p50_us": 15.1,
+      "latency_p95_us": 16.0
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "9.33 us",
+    "measured_p50_us": 15.1
+  },
+  "honest_note": "Заявленное число '20.5 раз надёжнее FIFO' и 'Focus Drift = 0.000' не воспроизводимы буквально без спецификации того, как именно измерялся FIFO-бенчмарк в оригинальной работе; честно протестирован РЕАЛЬНЫЙ принцип механизма (удержание фокуса без входа, плавное отслеживание цели, сравнительная устойчивость к шуму), а не подставлено готовое число."
+}

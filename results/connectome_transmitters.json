@@ -1,0 +1,29 @@
+{
+ "benchmark": "AIfa-BioBench — transmitter shares, real FlyWire v783",
+ "synapses_total": 54492922,
+ "synapses_with_prediction": 54462116,
+ "rows_excluded_no_prediction": 1732,
+ "expected_share_by_synapses": {
+  "acetylcholine": 0.4838,
+  "GABA": 0.2316,
+  "glutamate": 0.1925,
+  "dopamine": 0.0443,
+  "serotonin": 0.0208,
+  "octopamine": 0.0269
+ },
+ "argmax_share_by_synapses": {
+  "acetylcholine": 0.5578,
+  "GABA": 0.2331,
+  "glutamate": 0.1778,
+  "dopamine": 0.0136,
+  "serotonin": 0.0117,
+  "octopamine": 0.0061
+ },
+ "provenance": {
+  "python": "3.14.4",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "utc": "2026-09-23T12:22:02Z",
+  "runtime_s": 1.8
+ }
+}

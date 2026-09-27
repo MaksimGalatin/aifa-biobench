@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+
+# FlyWire v783 connectome (Zenodo 10.5281/zenodo.10676866, 852 MB) - download, do not commit
+bench/data/*.feather
+bench/data/*.npy
+
+# fresh runs of the open scripts write here; the stamped results are in results/
+bench/results/

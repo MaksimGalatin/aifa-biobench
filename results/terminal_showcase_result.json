@@ -1,0 +1,25 @@
+{
+  "configuration": {
+    "n_neurons": 139255,
+    "n_frames": 60,
+    "grid_size": "160x48 (320x192 суб-пикселей braille)",
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "написано с нуля 21.09.2026 (готового движка под эту проекцию/сонификацию в aifa_sdk не найдено); буквальная реализация формул карточки: ортографическая проекция [u,v]=R(alpha,beta)*[x,y,z], сонификация f(t)=f0+k_audio*sum(s_i(t))"
+  },
+  "honest_measurement": {
+    "frame_render_latency_p50_us_full_139k_neurons": 4101.6,
+    "frame_render_latency_p95_us": 4941.6,
+    "sonification_latency_p50_us": 1.3,
+    "single_point_projection_latency_p50_us": 14.3,
+    "achievable_fps_full_projection": 243.81
+  },
+  "claimed_metric_check": {
+    "claimed": "6.99 us",
+    "claimed_fps": "60 FPS (упомянуто в конкурентном сравнении карточки)",
+    "measured_single_point_latency_us": 14.3,
+    "measured_full_frame_latency_us": 4101.6,
+    "measured_achievable_fps": 243.81,
+    "fps_claim_confirmed": true
+  }
+}

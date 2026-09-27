@@ -1,0 +1,17 @@
+Metric,Value
+recall_1,0.59
+recall_10,0.3955
+recall_100,0.2295
+precision_10,0.3955
+ndcg_10,0.5454
+map,0.3955
+latency_p50_ms,59.0292
+latency_p75_ms,60.2006
+latency_p90_ms,62.1657
+latency_p95_ms,63.2386
+latency_p99_ms,65.2897
+latency_mean_ms,59.5996
+latency_ci95_ms,0.2671
+qps,16.8
+build_time_sec,0.8056
+index_ram_mb,215.52

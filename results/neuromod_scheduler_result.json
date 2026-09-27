@@ -1,0 +1,31 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка под эту формулу в aifa_sdk не найдено); буквальная реализация дифференциальных уравнений и нелинейной формулы карточки",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "honest_measurement": {
+    "behavior_test": {
+      "final_workers_after_sustained_success": 4,
+      "final_workers_after_sustained_errors": 0,
+      "final_silence_timeout_after_errors_sec": 38.3333,
+      "claim_success_raises_parallelism": false,
+      "claim_errors_reduce_parallelism_near_zero": true,
+      "claim_errors_increase_backoff_timeout": true,
+      "formula_analysis": {
+        "c_dop_equilibrium_under_sustained_success": 3.0,
+        "dopamine_term_at_equilibrium": 3.9802,
+        "octopamine_baseline_penalty_at_zero_error": 3.0,
+        "finding": "При устойчивом успехе БЕЗ ошибок (c_oct=0) базовый штраф 6*sigmoid(0)=3.0 почти полностью гасит максимально достижимый прирост от дофамина 4*tanh(3.0)=3.98, оставляя чистый прирост параллелизма около 0. Заявленная формула сама по себе не даёт значимого роста параллелизма при чистом успехе — это математическое свойство формулы, а не ошибка реализации."
+      }
+    },
+    "latency": {
+      "latency_p50_us": 2.0,
+      "latency_p95_us": 2.4,
+      "latency_p99_us": 4.0
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "0.19 us",
+    "measured_p50_us": 2.0
+  }
+}

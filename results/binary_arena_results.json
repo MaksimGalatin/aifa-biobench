@@ -1,0 +1,35 @@
+[
+  {
+    "method": "AIfa FlyHash (Binary-Flat)",
+    "recall_at_10_pct": 18.9,
+    "precision_at_10_pct": 18.9,
+    "ndcg_at_10": 0.3188,
+    "p50_latency_ms": 35.459,
+    "p95_latency_ms": 40.901,
+    "qps": 27.9,
+    "build_time_sec": 0.262,
+    "ram_mb": 58.9
+  },
+  {
+    "method": "Sign-LSH / BQ 1-Bit",
+    "recall_at_10_pct": 80.5,
+    "precision_at_10_pct": 80.5,
+    "ndcg_at_10": 0.8715,
+    "p50_latency_ms": 36.769,
+    "p95_latency_ms": 42.342,
+    "qps": 26.6,
+    "build_time_sec": 0.19,
+    "ram_mb": 58.9
+  },
+  {
+    "method": "MultiHash Table LSH",
+    "recall_at_10_pct": 0.1,
+    "precision_at_10_pct": 0.1,
+    "ndcg_at_10": 0.0022,
+    "p50_latency_ms": 0.045,
+    "p95_latency_ms": 0.06,
+    "qps": 21131.8,
+    "build_time_sec": 0.109,
+    "ram_mb": 54.9
+  }
+]

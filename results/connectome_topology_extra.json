@@ -1,0 +1,59 @@
+{
+ "benchmark": "AIfa-BioBench — extra topology of the real FlyWire v783 connectome",
+ "graph": {
+  "threshold_synapses": 5,
+  "nodes_with_edges": 134181,
+  "undirected_edges": 2511789,
+  "mean_degree": 37.43881771636819,
+  "max_degree": 7795
+ },
+ "small_world": {
+  "C": 0.15508395852018747,
+  "L": 4.019035197337934,
+  "C_rand_measured": 0.0002878139882332019,
+  "L_rand_measured": 3.651943638532847,
+  "sigma": 489.61784382435786,
+  "clustering_sample_nodes": 3000,
+  "path_bfs_sources": 100,
+  "random_graph": "Erdos-Renyi G(n, m) with the same n and m, same sampling"
+ },
+ "percolation": {
+  "k2_over_k": 190.9309217454173,
+  "f_c_random_failure_cohen2000": 0.9947349278842526
+ },
+ "k_core": {
+  "k_max": 57,
+  "innermost_core_size": 258
+ },
+ "robustness_giant_component_fraction": {
+  "random": {
+   "0.01": 0.9771949828962372,
+   "0.05": 0.9367048986071054,
+   "0.1": 0.8865264083588585,
+   "0.3": 0.6846498386507777,
+   "0.5": 0.481014450630119
+  },
+  "targeted_by_degree": {
+   "0.01": 0.9691237954702976,
+   "0.05": 0.892794061752409,
+   "0.1": 0.8297523494384451,
+   "0.3": 0.5753944299118355,
+   "0.5": 0.27955522764027696
+  }
+ },
+ "params": {
+  "threshold": 5,
+  "clust_sample": 3000,
+  "path_sources": 100,
+  "seed": 42,
+  "output": "results/connectome_topology_extra.json"
+ },
+ "provenance": {
+  "python": "3.14.4",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "utc": "2026-09-23T12:23:27Z",
+  "runtime_s": 146.4
+ }
+}

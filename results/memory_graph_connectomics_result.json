@@ -1,0 +1,26 @@
+{
+  "configuration": {
+    "n_orgs": 5000,
+    "n_domains": 5000,
+    "n_phones": 3000,
+    "n_technologies": 50,
+    "n_total_nodes": 13050,
+    "n_edges": 30094,
+    "avg_degree_target": 6,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "metrics": {
+    "two_hop_search_ms_per_query": 0.0125,
+    "n_search_trials": 1000,
+    "pagerank_total_time_sec": 0.6197,
+    "pagerank_n_iterations": 20,
+    "top5_pagerank_node_ids": [
+      13032,
+      13016,
+      13004,
+      13020,
+      13043
+    ]
+  }
+}

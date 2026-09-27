@@ -1,0 +1,35 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка под EMD/Рейхардта в aifa_sdk не найдено); буквальная реализация формулы карточки: EMD_A->B(t)=S_A(t-tau)*S_B(t)-S_A(t)*S_B(t-tau), P_flicker=интеграл спектральной мощности EMD по полосе 3-50 Гц",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "honest_measurement": {
+    "flicker_detection": {
+      "sample_rate_hz": 200.0,
+      "tau_steps": 2,
+      "static_power_mean": 1.9800485706149569,
+      "in_band_power_mean": 3177.243668346479,
+      "out_of_band_power_mean": 1.450968888199003,
+      "threshold_geometric_mean": 79.31643451394464,
+      "n_static_trials": 20,
+      "static_false_positives": 0,
+      "n_in_band_trials": 5,
+      "in_band_detected": 4,
+      "n_out_of_band_trials": 4,
+      "out_of_band_false_positives": 0,
+      "ratio_in_band_to_static": 1604.6291568290676,
+      "claim_flicker_detected_in_band": false,
+      "claim_static_not_flagged": true
+    },
+    "latency": {
+      "grid_size": 32,
+      "n_elementary_detectors": 1024,
+      "latency_per_emd_p50_us": 0.0021,
+      "latency_per_emd_p95_us": 0.0023
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "0.28 us",
+    "measured_p50_us": 0.0021
+  }
+}

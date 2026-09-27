@@ -1,0 +1,4 @@
+method,recall_at_10_pct,precision_at_10_pct,ndcg_at_10,p50_latency_ms,p95_latency_ms,qps,build_time_sec,ram_mb
+AIfa FlyHash (Binary-Flat),18.9,18.9,0.3188,35.459,40.901,27.9,0.262,58.9
+Sign-LSH / BQ 1-Bit,80.5,80.5,0.8715,36.769,42.342,26.6,0.19,58.9
+MultiHash Table LSH,0.1,0.1,0.0022,0.045,0.06,21131.8,0.109,54.9

@@ -1,0 +1,26 @@
+{
+  "configuration": {
+    "n_docs": 500,
+    "n_queries": 200,
+    "vocab_size": 8192,
+    "kc_cells": 16384,
+    "seed": 42,
+    "runtime": "Node.js v24.15.0 (движок V8 — тот же JS-движок, что в Chrome; замер валиден для клиентского браузерного исполнения)",
+    "file_checked": "public/aifa_connectome_web.js"
+  },
+  "file_reality_check": {
+    "claimed_technology": "WebAssembly SIMD128 binary, 126.7 KB",
+    "actual_technology": "pure JavaScript (TypedArrays), 0 bytes WASM, 0 SIMD instructions — подтверждено собственным комментарием файла: 'pure JavaScript / TypedArrays'",
+    "claimed_size_bytes": 126700,
+    "actual_size_bytes": 7121,
+    "size_discrepancy_factor": 17.79,
+    "claimed_algorithm": "popcount SIMD128 bitwise scan",
+    "actual_algorithm": "inverted posting-list index + Kenyon Cell activation + Jaccard similarity (не popcount, не побитовое сканирование)"
+  },
+  "honest_measurement": {
+    "latency_p50_us": 2756.3,
+    "latency_p95_us": 3620.9,
+    "latency_p99_us": 4533.1,
+    "note": "Это ЧЕСТНЫЙ замер РЕАЛЬНОГО алгоритма (обратный индекс, не SIMD-popcount), поэтому число НЕ сравнимо напрямую с заявленными 331.6 мкс — та цифра описывала другую (не существующую) технологию."
+  }
+}

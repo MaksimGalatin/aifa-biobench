@@ -1,0 +1,65 @@
+{
+  "benchmark": "Real robustness: bit dropout in retrieval, neuron death in CANN ring",
+  "params": {
+    "seeds": 5,
+    "n": 20000,
+    "dim": 256,
+    "bits": 512,
+    "queries": 100,
+    "pool": 50,
+    "output": "E:\\CODE\\aifa-biobench\\bench\\..\\results\\robustness_real.json"
+  },
+  "rows": [
+    {
+      "dropout": 0.0,
+      "flyhash_recall10": 0.5886,
+      "flyhash_std": 0.0187,
+      "signlsh_recall10": 0.8614,
+      "signlsh_std": 0.0094,
+      "cann_idle_error_deg": 0.13,
+      "cann_after_distractor_error_deg": 76.47
+    },
+    {
+      "dropout": 0.1,
+      "flyhash_recall10": 0.5232,
+      "flyhash_std": 0.02,
+      "signlsh_recall10": 0.845,
+      "signlsh_std": 0.0063,
+      "cann_idle_error_deg": 6.96,
+      "cann_after_distractor_error_deg": 72.98
+    },
+    {
+      "dropout": 0.2,
+      "flyhash_recall10": 0.4616,
+      "flyhash_std": 0.0209,
+      "signlsh_recall10": 0.8276,
+      "signlsh_std": 0.0154,
+      "cann_idle_error_deg": 6.75,
+      "cann_after_distractor_error_deg": 82.2
+    },
+    {
+      "dropout": 0.3,
+      "flyhash_recall10": 0.3964,
+      "flyhash_std": 0.03,
+      "signlsh_recall10": 0.8224,
+      "signlsh_std": 0.0144,
+      "cann_idle_error_deg": 15.21,
+      "cann_after_distractor_error_deg": 73.99
+    },
+    {
+      "dropout": 0.5,
+      "flyhash_recall10": 0.2544,
+      "flyhash_std": 0.0334,
+      "signlsh_recall10": 0.7822,
+      "signlsh_std": 0.0057,
+      "cann_idle_error_deg": 14.56,
+      "cann_after_distractor_error_deg": 94.22
+    }
+  ],
+  "provenance": {
+    "python": "3.14.4",
+    "numpy": "2.5.2",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "utc": "2026-09-23T10:59:20Z"
+  }
+}

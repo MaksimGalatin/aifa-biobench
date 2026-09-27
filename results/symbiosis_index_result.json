@@ -1,0 +1,28 @@
+{
+  "configuration": {
+    "num_turns": 1000,
+    "seed": 42,
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "engine_source": "E:/CODE/aifa-biobench/aifa_sdk/symbiosis_index.py (уже существовал, реализует ДРУГУЮ формулу, чем заявлена на карточке: 4 множителя intent_alignment*latency_decay*accuracy_factor*h_synergy, а не 3 заявленных exp(-lambda*D_KL)*Alignment*Trust — Alignment и Trust на карточке никогда не были определены числом)"
+  },
+  "honest_session_result": {
+    "num_turns": 1000,
+    "mean_phi": 0.1547,
+    "final_phi": 0.165,
+    "p50_phi": 0.0974,
+    "p95_phi": 0.5262,
+    "harmonic_symbiosis_ratio_pct": 0.0,
+    "wall_time_ms": 49.657,
+    "turn_eval_latency_us": 49.66
+  },
+  "formula_reality_check": {
+    "claimed_formula": "Phi_sym = exp(-lambda * D_KL(P_intent || P_action)) * Alignment * Trust",
+    "claimed_variables_defined": "D_KL — да (формула стандартная); Alignment, Trust — НЕТ, ни разу не определены числом на карточке",
+    "actual_formula_in_engine": "Phi_symbiosis = (1 - D_KL(P_intent||P_action)) * exp(-tau/tau_0) * (1 - N_corr/N_int) * H_synergy",
+    "actual_variables": "D_KL — Kullback-Leibler между распределением намерения и действия; tau — задержка реакции; N_corr/N_int — доля ручных коррекций оператора; H_synergy — нормализованная энтропийная синергия"
+  },
+  "claimed_metric_check": {
+    "claimed": "39.7 μs P50",
+    "measured": "49.66 us per turn (average over 1000 turns, not a per-turn P50 percentile)"
+  }
+}

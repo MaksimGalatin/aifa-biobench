@@ -1,0 +1,39 @@
+{
+  "configuration": {
+    "engine_source": "написано с нуля 21.09.2026 (готового движка Turrigiano synaptic scaling в aifa_sdk не найдено; есть другой гомеостатический механизм apl_gate.py — GABA-ингибирование новизны, не то же самое). Буквальная реализация формулы: dW/dt=eta*x_i*x_j - gamma*W_ij*(sum(W)-S_target), мультипликативное масштабирование W(t+1)=W(t)*(S_target/sum(W(t)))",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "honest_measurement": {
+    "saturation_prevention": {
+      "n_steps": 500,
+      "s_target": 1.0,
+      "mean_sum_after_scaling": 1.0,
+      "mean_deviation_pct_after_scaling": 0.0,
+      "max_deviation_pct_after_scaling": 0.0,
+      "mean_swelling_pct_before_scaling": 56.96,
+      "note": "sum_after_scaling равна S_target тождественно по формуле карточки (математическое свойство мультипликативной нормировки); swelling_pct_before показывает, насколько прирост Хебба 'разбухает' сумму между двумя срабатываниями гомеостаза — это не нарушение заявления, а честная мера скорости обучения между шагами гомеостаза",
+      "claim_stays_near_target": true,
+      "control_no_homeostasis_final_sum": 1300.55,
+      "control_confirms_unbounded_growth_without_homeostasis": true
+    },
+    "pruning_and_capacity": {
+      "n_synapses": 100,
+      "n_pruned_after_phase1": 66,
+      "fraction_pruned_from_unused_half": 0.7576,
+      "claim_pruning_targets_weak_synapses": false,
+      "sum_before_phase2": 1.0,
+      "sum_after_phase2": 1.0,
+      "sum_stays_near_target_after_pruning": true,
+      "n_active_synapses_remaining": 34
+    },
+    "latency": {
+      "n_synapses": 200,
+      "latency_p50_us": 9.8,
+      "latency_p95_us": 10.2
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "6.59 us",
+    "measured_p50_us": 9.8
+  }
+}

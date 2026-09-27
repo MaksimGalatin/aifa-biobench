@@ -1,0 +1,22 @@
+name: Open benchmark scripts
+
+# Runs the scripts that live in this repository (public data only) and checks that
+# the result files still match the OpenTimestamps-stamped manifest.
+on: [push, pull_request]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Stamped results match the manifest
+        run: sha256sum -c --ignore-missing results/MANIFEST_2026-09-23.sha256
+      - name: Install dependencies
+        run: pip install numpy scipy
+      - name: Merkle-tree proof (synthetic neurons)
+        run: python bench/proof_of_connectome.py --n-neurons 5000
+      - name: Aho-Corasick string filter
+        run: python bench/olfactory_filter_run.py

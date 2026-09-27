@@ -1,0 +1,36 @@
+{
+  "configuration": {
+    "engine_source": "НАЙДЕН существующий движок aifa_sdk/bilateral_verifier.py, класс BilateralVerifier. ЕГО ФОРМУЛА ДРУГАЯ, чем заявлено в карточке: код использует concordance=sqrt(sl*sr)*(1-0.4*|sl-sr|) на СКАЛЯРАХ (score_left, score_right), карточка заявляет косинусное сходство МЕЖДУ ВЕКТОРАМИ вердиктов. Тестировался РЕАЛЬНЫЙ движок, а не гипотетическая реализация формулы карточки.",
+    "platform": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "found_internal_discrepancy_math_field": {
+    "description": "Расхождение внутри самой карточки, найдено при чтении текста ДО прогона кода",
+    "math_field_says": "подавление галлюцинаций на 84.6%",
+    "competitors_field_says": "снижение галлюцинаций LLM на 99.1%",
+    "note": "Два разных процента для, по-видимому, одной и той же заявленной способности снижать галлюцинации, в одной карточке на одном языке"
+  },
+  "found_formula_discrepancy_vs_code": {
+    "actual_consensus_threshold_in_code": 0.52,
+    "claimed_threshold_in_card": 0.95,
+    "thresholds_match": false
+  },
+  "honest_measurement": {
+    "hallucination_rejection_test": {
+      "n_agreement_trials": 50,
+      "n_agreement_correctly_approved": 50,
+      "claim_agreement_approved": true,
+      "n_hallucination_trials": 50,
+      "n_hallucination_correctly_rejected": 50,
+      "claim_hallucination_rejected": true
+    },
+    "latency": {
+      "n_trials": 2000,
+      "latency_p50_us": 4.3,
+      "latency_p95_us": 4.5
+    }
+  },
+  "claimed_metric_check": {
+    "claimed": "0.20 us",
+    "measured_p50_us": 4.3
+  }
+}
