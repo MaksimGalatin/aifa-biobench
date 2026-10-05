@@ -12,10 +12,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Stamped results match the manifest
+      - name: Stamped results match the manifest of 23 September 2026
         # README.md is excluded: the manifest stamps the README of the full repository (23.09),
         # this repository has its own README.
-        run: grep -v ' README.md$' results/MANIFEST_2026-09-23.sha256 | sha256sum -c --ignore-missing
+        # 05.10.2026 сменились LICENSE и строка лицензии в заголовке двух скриптов (Apache 2.0 ->
+        # PolyForm Noncommercial 1.0.0); их версии 23.09 остаются в истории git до коммита 067f3af.
+        # Код не менялся — следующий шаг сверяет каждый файл на 5 октября.
+        run: grep -v -E ' (README.md|LICENSE|bench/olfactory_filter_run.py|bench/proof_of_connectome.py)$' results/MANIFEST_2026-09-23.sha256 | sha256sum -c --ignore-missing
+      - name: Stamped files match the manifest of 5 October 2026
+        # Все файлы этого репозитория из манифеста 23.09 в состоянии на 5 октября 2026 (метка OpenTimestamps — .ots рядом).
+        run: sha256sum -c results/MANIFEST_2026-10-05.sha256
       - name: Install dependencies
         run: pip install numpy scipy
       - name: Merkle-tree proof (synthetic neurons)
