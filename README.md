@@ -4,14 +4,14 @@ Open, timestamped results of the benchmarks for the bio-inspired algorithms behi
 "fly hash" projection, APL novelty gate, CANN ring attractor, CX steering, bilateral verifier) — and an
 honest record of what they do and do not achieve, including where standard methods win.
 
-- **Licence:** Apache 2.0 (this repository). Connectome data: FlyWire v783, CC BY 4.0.
+- **Licence:** PolyForm Noncommercial 1.0.0 (this repository) — free for non-commercial use; commercial use only under a written licence (contact@codeofdigitaleternity.com). Connectome data: FlyWire v783, CC BY 4.0 (licence of its authors).
 - **Pages that cite these numbers:** <https://aifa.works/acr> · <https://www.codeofdigitaleternity.com/acr>
 - **Every number below comes from a file in `results/`.** If a number on a page is not here, treat it as
   unverified and tell us: contact@codeofdigitaleternity.com.
 
 ## Free and paid parts
 
-| This repository (free, Apache 2.0) | AIfa-BioBench Pro (paid, private) |
+| This repository (free for non-commercial use, PolyForm Noncommercial 1.0.0) | AIfa-BioBench Pro (paid, private) |
 |---|---|
 | all result files of the real measurements (`results/`) | everything in the free part |
 | OpenTimestamps proofs and the stamped manifest | the engine code (`aifa_sdk/`) |
@@ -174,4 +174,4 @@ results/                    machine-readable outputs, manifest and .ots proofs
 
 Maksim Galatin — CODE Eternal / AIfa Works. Contact: contact@codeofdigitaleternity.com
 
-Licensed under the Apache License 2.0 — see [LICENSE](LICENSE).
+Licensed under the PolyForm Noncommercial License 1.0.0 — see [LICENSE](LICENSE). Commercial use requires a written licence with payment to the licensor: contact@codeofdigitaleternity.com.

@@ -2,7 +2,7 @@
 # AIfa-BioBench: Строковые эвристики против нейросетевого перегрева (Карточка #13)
 # Copyright (c) 2026 CODE Eternal Ecosystem & Maksim Galatin
 # Chief Architect, Lead Engineer & Creator: Maxim Valentinovich Galatin
-# Licensed under the Apache License, Version 2.0
+# Licensed under the PolyForm Noncommercial License 1.0.0 — commercial use only under a written licence: contact@codeofdigitaleternity.com
 #
 # 21.09.2026: карточка #13 заявляет ускорение "70 000-75 000 раз" против
 # LLM (пересчитано в прошлой части этой сессии из чисел 150 мс / 0.002-

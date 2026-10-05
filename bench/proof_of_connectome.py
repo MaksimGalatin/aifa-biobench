@@ -2,7 +2,7 @@
 # AIfa-BioBench: Proof of Connectome (Карточка #4)
 # Copyright (c) 2026 CODE Eternal Ecosystem & Maksim Galatin
 # Chief Architect, Lead Engineer & Creator: Maxim Valentinovich Galatin
-# Licensed under the Apache License, Version 2.0
+# Licensed under the PolyForm Noncommercial License 1.0.0 — commercial use only under a written licence: contact@codeofdigitaleternity.com
 #
 # Реализация Merkle Tree, заявленного на карточке #4 страницы /digital и /acr:
 #
