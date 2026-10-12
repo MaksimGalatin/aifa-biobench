@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+message: >-
+  If you use AIfa-BioBench, please cite it as below. If you use the FlyWire v783 connectome
+  numbers, please also cite the FlyWire papers and dataset listed under references.
+title: "AIfa-BioBench: open, timestamped benchmark results for bio-inspired retrieval and the FlyWire v783 connectome"
+type: software
+authors:
+  - family-names: Galatin
+    given-names: Maksim
+    orcid: "https://orcid.org/0009-0002-0187-8547"
+    email: contact@codeofdigitaleternity.com
+    affiliation: "CODE Eternal / AIfa Works"
+repository-code: "https://github.com/MaksimGalatin/aifa-biobench"
+url: "https://aifa.works/acr"
+license: PolyForm-Noncommercial-1.0.0
+version: "2026.10.12"
+date-released: "2026-10-12"
+keywords:
+  - benchmark
+  - approximate nearest neighbour search
+  - locality-sensitive hashing
+  - FlyHash
+  - Merkle tree
+  - RFC 6962
+  - connectome
+  - FlyWire
+  - Drosophila
+  - reproducibility
+  - OpenTimestamps
+references:
+  - type: article
+    title: "Neuronal wiring diagram of an adult brain"
+    authors:
+      - family-names: Dorkenwald
+        given-names: Sven
+      - name: "FlyWire Consortium"
+    journal: Nature
+    volume: 634
+    start: 124
+    end: 138
+    year: 2024
+    doi: 10.1038/s41586-024-07558-y
+  - type: article
+    title: "Whole-brain annotation and multi-connectome cell typing of Drosophila"
+    authors:
+      - family-names: Schlegel
+        given-names: Philipp
+      - name: "FlyWire Consortium"
+    journal: Nature
+    volume: 634
+    start: 139
+    end: 152
+    year: 2024
+    doi: 10.1038/s41586-024-07686-5
+  - type: data
+    title: "FlyWire Whole-brain Connectome Connectivity Data"
+    authors:
+      - name: "FlyWire Consortium"
+    version: "783"
+    year: 2024
+    doi: 10.5281/zenodo.10676866
+    license: CC-BY-4.0

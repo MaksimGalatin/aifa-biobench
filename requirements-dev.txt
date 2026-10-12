@@ -1,0 +1,4 @@
+# Tests: python -m pytest   (networkx is the independent reference for the graph statistics)
+-r requirements.txt
+pytest>=7
+networkx>=3.0

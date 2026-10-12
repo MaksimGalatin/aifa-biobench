@@ -1,7 +1,8 @@
 name: Open benchmark scripts
 
-# Runs the scripts that live in this repository (public data only) and checks that
-# the result files still match the OpenTimestamps-stamped manifest.
+# Runs the scripts that live in this repository (public data only), checks that the result files still match
+# the OpenTimestamps-stamped manifests, that every number in README.md comes from its result file, and runs the
+# test suite on three operating systems and four Python versions.
 on: [push, pull_request]
 
 jobs:
@@ -20,11 +21,38 @@ jobs:
         # Код не менялся — следующий шаг сверяет каждый файл на 5 октября.
         run: grep -v -E ' (README.md|LICENSE|bench/olfactory_filter_run.py|bench/proof_of_connectome.py)$' results/MANIFEST_2026-09-23.sha256 | sha256sum -c --ignore-missing
       - name: Stamped files match the manifest of 5 October 2026
-        # Все файлы этого репозитория из манифеста 23.09 в состоянии на 5 октября 2026 (метка OpenTimestamps — .ots рядом).
-        run: sha256sum -c results/MANIFEST_2026-10-05.sha256
+        # 12.10.2026 в README.md дописаны разделы 8–9 и исправлено NDCG 0.872 -> 0.871; README 5 октября — коммит 18b7e64.
+        run: grep -v -E ' README.md$' results/MANIFEST_2026-10-05.sha256 | sha256sum -c
+      - name: Every tracked file matches the manifest of 12 October 2026
+        run: sha256sum -c results/MANIFEST_2026-10-12.sha256
       - name: Install dependencies
         run: pip install numpy scipy
+      - name: Every number in README.md equals the value in its result file
+        run: python bench/check_claims.py
       - name: Merkle-tree proof (synthetic neurons)
         run: python bench/proof_of_connectome.py --n-neurons 5000
       - name: Aho-Corasick string filter
         run: python bench/olfactory_filter_run.py
+      - name: Merkle tree with RFC 6962 inclusion proofs (synthetic neurons)
+        run: python bench/merkle_rfc6962.py
+      - name: Open retrieval arena (exact, Sign-LSH, multi-table LSH)
+        run: python bench/open_arena.py
+      - name: Re-run everything and compare with the stamped files
+        run: python bench/reproduce.py --skip-connectome
+
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.10', '3.11', '3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Test suite
+        run: python -m pytest -q

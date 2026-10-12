@@ -1,0 +1,676 @@
+{
+ "rows": [
+  {
+   "check": "proof_of_connectome: final_root_sha256",
+   "stamped": "ce7dacf9663a4b34773fd48b768aabfa3f729debca4c0fd20c2160de9bddfae3",
+   "fresh": "ce7dacf9663a4b34773fd48b768aabfa3f729debca4c0fd20c2160de9bddfae3",
+   "verdict": "PASS"
+  },
+  {
+   "check": "proof_of_connectome: tampering_detection_rate",
+   "stamped": 1.0,
+   "fresh": 1.0,
+   "verdict": "PASS"
+  },
+  {
+   "check": "proof_of_connectome: build_time_sec",
+   "stamped": 1.2255,
+   "fresh": 1.0621,
+   "verdict": "INFO"
+  },
+  {
+   "check": "olfactory_filter: danger_flagged_pct",
+   "stamped": 59.46,
+   "fresh": 59.46,
+   "verdict": "PASS"
+  },
+  {
+   "check": "olfactory_filter: latency_p50_us",
+   "stamped": 2.0,
+   "fresh": 2.8,
+   "verdict": "INFO"
+  },
+  {
+   "check": "arena Sign-LSH / BQ 1-Bit: recall_at_10_pct",
+   "stamped": 80.5,
+   "fresh": 80.5,
+   "verdict": "PASS"
+  },
+  {
+   "check": "arena Sign-LSH / BQ 1-Bit: ndcg_at_10",
+   "stamped": 0.8715,
+   "fresh": 0.8715,
+   "verdict": "PASS"
+  },
+  {
+   "check": "arena Sign-LSH / BQ 1-Bit: p50_latency_ms",
+   "stamped": 36.769,
+   "fresh": 5.656,
+   "verdict": "INFO"
+  },
+  {
+   "check": "arena MultiHash Table LSH: recall_at_10_pct",
+   "stamped": 0.1,
+   "fresh": 0.1,
+   "verdict": "PASS"
+  },
+  {
+   "check": "arena MultiHash Table LSH: ndcg_at_10",
+   "stamped": 0.0022,
+   "fresh": 0.0022,
+   "verdict": "PASS"
+  },
+  {
+   "check": "arena MultiHash Table LSH: p50_latency_ms",
+   "stamped": 0.045,
+   "fresh": 0.042,
+   "verdict": "INFO"
+  },
+  {
+   "check": "merkle_rfc6962 synthetic: root_sha256",
+   "stamped": "57e8d00707c57d0baa48bc20bfbb8d07f85891622615a83604b0f513cdf92b81",
+   "fresh": "57e8d00707c57d0baa48bc20bfbb8d07f85891622615a83604b0f513cdf92b81",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: benchmark",
+   "stamped": "AIfa-BioBench \u2014 real FlyWire v783 connectome metrics",
+   "fresh": "AIfa-BioBench \u2014 real FlyWire v783 connectome metrics",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: source.zenodo_record",
+   "stamped": "10.5281/zenodo.10676866",
+   "fresh": "10.5281/zenodo.10676866",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: source.license",
+   "stamped": "CC BY 4.0",
+   "fresh": "CC BY 4.0",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: source.md5.proofread_connections_783.feather",
+   "stamped": "f48f972d262323a102aed49af1396b8a",
+   "fresh": "f48f972d262323a102aed49af1396b8a",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: source.md5.proofread_root_ids_783.npy",
+   "stamped": "e0e6c19732fd8c7a4e39a2d170105421",
+   "fresh": "e0e6c19732fd8c7a4e39a2d170105421",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: source.columns",
+   "stamped": [
+    "pre_pt_root_id",
+    "post_pt_root_id",
+    "neuropil",
+    "syn_count",
+    "gaba_avg",
+    "ach_avg",
+    "glut_avg",
+    "oct_avg",
+    "ser_avg",
+    "da_avg"
+   ],
+   "fresh": [
+    "pre_pt_root_id",
+    "post_pt_root_id",
+    "neuropil",
+    "syn_count",
+    "gaba_avg",
+    "ach_avg",
+    "glut_avg",
+    "oct_avg",
+    "ser_avg",
+    "da_avg"
+   ],
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: counts.proofread_neurons",
+   "stamped": 139255,
+   "fresh": 139255,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: counts.edge_rows_by_neuropil",
+   "stamped": 16847997,
+   "fresh": 16847997,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: counts.unique_directed_pairs",
+   "stamped": 15091983,
+   "fresh": 15091983,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: counts.total_synapses",
+   "stamped": 54492922,
+   "fresh": 54492922,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: counts.directed_pairs_ge_5_synapses",
+   "stamped": 2700513,
+   "fresh": 2700513,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: counts.undirected_edges_ge_5_synapses",
+   "stamped": 2511789,
+   "fresh": 2511789,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: weights.lognormal_shape",
+   "stamped": 0.8882833497560998,
+   "fresh": 0.8882833497560998,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: weights.lognormal_scale",
+   "stamped": 2.0205555560279254,
+   "fresh": 2.0205555560279254,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: weights.ks_distance_vs_lognormal",
+   "stamped": 0.2824597189363452,
+   "fresh": 0.2824597189363452,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: weights.median_synapses_per_pair",
+   "stamped": 2.0,
+   "fresh": 2.0,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: weights.max_synapses_per_pair",
+   "stamped": 2405,
+   "fresh": 2405,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.avg_local_clustering",
+   "stamped": 0.16034184173447988,
+   "fresh": 0.16034184173447988,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.clustering_sample_nodes",
+   "stamped": 3000,
+   "fresh": 3000,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.characteristic_path_length",
+   "stamped": 4.028191209918374,
+   "fresh": 4.028191209918374,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.path_bfs_sources",
+   "stamped": 150,
+   "fresh": 150,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.mean_reachable_nodes_per_source",
+   "stamped": 128066.16,
+   "fresh": 128066.16,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.mean_degree",
+   "stamped": 36.07466877311407,
+   "fresh": 36.07466877311407,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: topology_thresholded_undirected.max_degree",
+   "stamped": 7795,
+   "fresh": 7795,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: params.threshold",
+   "stamped": 5,
+   "fresh": 5,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: params.clust_sample",
+   "stamped": 3000,
+   "fresh": 3000,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: params.path_sources",
+   "stamped": 150,
+   "fresh": 150,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: params.seed",
+   "stamped": 42,
+   "fresh": 42,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_real_metrics: runtime_s",
+   "stamped": null,
+   "fresh": 131.7,
+   "verdict": "INFO"
+  },
+  {
+   "check": "connectome_topology_extra: benchmark",
+   "stamped": "AIfa-BioBench \u2014 extra topology of the real FlyWire v783 connectome",
+   "fresh": "AIfa-BioBench \u2014 extra topology of the real FlyWire v783 connectome",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: graph.threshold_synapses",
+   "stamped": 5,
+   "fresh": 5,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: graph.nodes_with_edges",
+   "stamped": 134181,
+   "fresh": 134181,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: graph.undirected_edges",
+   "stamped": 2511789,
+   "fresh": 2511789,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: graph.mean_degree",
+   "stamped": 37.43881771636819,
+   "fresh": 37.43881771636819,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: graph.max_degree",
+   "stamped": 7795,
+   "fresh": 7795,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.C",
+   "stamped": 0.15508395852018747,
+   "fresh": 0.15508395852018747,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.L",
+   "stamped": 4.019035197337934,
+   "fresh": 4.019035197337934,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.C_rand_measured",
+   "stamped": 0.0002878139882332019,
+   "fresh": 0.0002878139882332019,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.L_rand_measured",
+   "stamped": 3.651943638532847,
+   "fresh": 3.651943638532847,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.sigma",
+   "stamped": 489.61784382435786,
+   "fresh": 489.61784382435786,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.clustering_sample_nodes",
+   "stamped": 3000,
+   "fresh": 3000,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.path_bfs_sources",
+   "stamped": 100,
+   "fresh": 100,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: small_world.random_graph",
+   "stamped": "Erdos-Renyi G(n, m) with the same n and m, same sampling",
+   "fresh": "Erdos-Renyi G(n, m) with the same n and m, same sampling",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: percolation.k2_over_k",
+   "stamped": 190.9309217454173,
+   "fresh": 190.9309217454173,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: percolation.f_c_random_failure_cohen2000",
+   "stamped": 0.9947349278842526,
+   "fresh": 0.9947349278842526,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: k_core.k_max",
+   "stamped": 57,
+   "fresh": 57,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: k_core.innermost_core_size",
+   "stamped": 258,
+   "fresh": 258,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.random.0.01",
+   "stamped": 0.9771949828962372,
+   "fresh": 0.9771949828962372,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.random.0.05",
+   "stamped": 0.9367048986071054,
+   "fresh": 0.9367048986071054,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.random.0.1",
+   "stamped": 0.8865264083588585,
+   "fresh": 0.8865264083588585,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.random.0.3",
+   "stamped": 0.6846498386507777,
+   "fresh": 0.6846498386507777,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.random.0.5",
+   "stamped": 0.481014450630119,
+   "fresh": 0.481014450630119,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.targeted_by_degree.0.01",
+   "stamped": 0.9691237954702976,
+   "fresh": 0.9691237954702976,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.targeted_by_degree.0.05",
+   "stamped": 0.892794061752409,
+   "fresh": 0.892794061752409,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.targeted_by_degree.0.1",
+   "stamped": 0.8297523494384451,
+   "fresh": 0.8297523494384451,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.targeted_by_degree.0.3",
+   "stamped": 0.5753944299118355,
+   "fresh": 0.5753944299118355,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: robustness_giant_component_fraction.targeted_by_degree.0.5",
+   "stamped": 0.27955522764027696,
+   "fresh": 0.27955522764027696,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: params.threshold",
+   "stamped": 5,
+   "fresh": 5,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: params.clust_sample",
+   "stamped": 3000,
+   "fresh": 3000,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: params.path_sources",
+   "stamped": 100,
+   "fresh": 100,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: params.seed",
+   "stamped": 42,
+   "fresh": 42,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_topology_extra: runtime_s",
+   "stamped": null,
+   "fresh": 159.6,
+   "verdict": "INFO"
+  },
+  {
+   "check": "connectome_transmitters: benchmark",
+   "stamped": "AIfa-BioBench \u2014 transmitter shares, real FlyWire v783",
+   "fresh": "AIfa-BioBench \u2014 transmitter shares, real FlyWire v783",
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: synapses_total",
+   "stamped": 54492922,
+   "fresh": 54492922,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: synapses_with_prediction",
+   "stamped": 54462116,
+   "fresh": 54462116,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: rows_excluded_no_prediction",
+   "stamped": 1732,
+   "fresh": 1732,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: expected_share_by_synapses.acetylcholine",
+   "stamped": 0.4838,
+   "fresh": 0.4838,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: expected_share_by_synapses.GABA",
+   "stamped": 0.2316,
+   "fresh": 0.2316,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: expected_share_by_synapses.glutamate",
+   "stamped": 0.1925,
+   "fresh": 0.1925,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: expected_share_by_synapses.dopamine",
+   "stamped": 0.0443,
+   "fresh": 0.0443,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: expected_share_by_synapses.serotonin",
+   "stamped": 0.0208,
+   "fresh": 0.0208,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: expected_share_by_synapses.octopamine",
+   "stamped": 0.0269,
+   "fresh": 0.0269,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: argmax_share_by_synapses.acetylcholine",
+   "stamped": 0.5578,
+   "fresh": 0.5578,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: argmax_share_by_synapses.GABA",
+   "stamped": 0.2331,
+   "fresh": 0.2331,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: argmax_share_by_synapses.glutamate",
+   "stamped": 0.1778,
+   "fresh": 0.1778,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: argmax_share_by_synapses.dopamine",
+   "stamped": 0.0136,
+   "fresh": 0.0136,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: argmax_share_by_synapses.serotonin",
+   "stamped": 0.0117,
+   "fresh": 0.0117,
+   "verdict": "PASS"
+  },
+  {
+   "check": "connectome_transmitters: argmax_share_by_synapses.octopamine",
+   "stamped": 0.0061,
+   "fresh": 0.0061,
+   "verdict": "PASS"
+  },
+  {
+   "check": "merkle_rfc6962 FlyWire: leaves",
+   "stamped": 16847997,
+   "fresh": 16847997,
+   "verdict": "PASS"
+  },
+  {
+   "check": "merkle_rfc6962 FlyWire: root_sha256",
+   "stamped": "d8a3400b4c26b06c977306c45147657b1700bdb9baa2ee54406b92763c4b5077",
+   "fresh": "d8a3400b4c26b06c977306c45147657b1700bdb9baa2ee54406b92763c4b5077",
+   "verdict": "PASS"
+  },
+  {
+   "check": "merkle_rfc6962 FlyWire: tree_height",
+   "stamped": 25,
+   "fresh": 25,
+   "verdict": "PASS"
+  },
+  {
+   "check": "merkle_rfc6962 FlyWire: proof_hashes_max",
+   "stamped": 25,
+   "fresh": 25,
+   "verdict": "PASS"
+  },
+  {
+   "check": "merkle_rfc6962 FlyWire: proofs_verified",
+   "stamped": 10000,
+   "fresh": 10000,
+   "verdict": "PASS"
+  },
+  {
+   "check": "merkle_rfc6962 FlyWire: example_inclusion_proof",
+   "stamped": {
+    "leaf_index": 16239411,
+    "record": "720575940644702112|720575940625952755|LO_L|2405",
+    "leaf_hash": "030c95f4cc3e3da6d6f0481280baf1dc5fd09536cabeaabebcdfb6a5efbe6872",
+    "audit_path": [
+     "c9f7c849950831dab12b76bda20e780179504d18dc82cbd523013c91dccd2999",
+     "9f3fa5d40e2f3501779433476f92d0f3c8d4b3a1b7344eb5786bb319b04ebe68",
+     "a57e956f7d4fc955192601afe60bc504d99f5be6cf24611426b727805daee73a",
+     "5f8b0f78d1b3b5e0277b2a076bbebdc60f2c9acaa12433091853db180efc5a3b",
+     "87ea122cf8f7b2804c8235c2772da35b66cdbc52877db841ec7b457aee77432a",
+     "11cabab231da50c0dba32be94f95af578f2a7327510f0ee8741ad8bf8633aa4c",
+     "7c71c65d4ba92aea200b9873e5cd2b66c19c91dd843bdde5f3366eceb38aae1b",
+     "d474d2dbe59828a5b9e93a94258f15c4aada97413e25bc24556b3bf57d717574",
+     "01ed9656acfea57f05319d73e2cb71e0e2f7291eaf4786bb7ffc8a531aa58938",
+     "fe6f2d435c983a3924b9bc177aa9e90241fd7bf45695a48619b01cb0fcba7eff",
+     "61bce168418746657bba49f20e6d7f3f6b475705ca7dd4291948b90d7cd24c97",
+     "810eeb54afabafd321658c9a3b84be5257a844f0f1f4090bbaac3482dc181b6e",
+     "d72ef1064c5cb293a21e95f313290e7b5125ef43d8a4e2cf550afc5611286a35",
+     "93b8b0916a84cfd17f889e5d775b05cbdb659024412f83056a75a46e4337032a",
+     "98d319c33bb1c4365aeea71b81c64717e7533f7fd563f5093286fb593b87571e",
+     "9eebf8737e1e5cca783790ff86cc2f4d8aab1c458d3821dcb52dc0d78fe9b28a",
+     "8b131860bef6141ef48eb6bba92085508c786d2adc7c7eb0f609d45e4d2b8075",
+     "375b77b652f1ceb297477cb9e1b651aebc7dc8883985d4ff76a2c72a636ef608",
+     "37ea3d7ba4511a5a095e375d96fbcda1aa6fc610e724fec4c83e48dbf5bba455",
+     "d767cf448aac22dab6789aa2717b21e3a67c2007c585bcca2e8e9752f3be0720",
+     "142e12b525bedb5f5648eea0a790d6a10e423cff44a612ddc33228a8a7a0a82f",
+     "bd88cd0745e452713350bcd07467130f3ef8bd63e04ef1a4d50cddde0563f404",
+     "2440cc66b8cce73856c0a50acefb2c232d0de7ecda4f8ec5c13aebabbb0f6faa",
+     "ecdc58f6d180e7fb9eddeef2c3caa2bd8f6b93ec67620b9c7d60a1db7ddeddec",
+     "9673322d8a3a27849072cd382ab1390603a40d6912f9c68d99ea4610818ac011"
+    ]
+   },
+   "fresh": {
+    "leaf_index": 16239411,
+    "record": "720575940644702112|720575940625952755|LO_L|2405",
+    "leaf_hash": "030c95f4cc3e3da6d6f0481280baf1dc5fd09536cabeaabebcdfb6a5efbe6872",
+    "audit_path": [
+     "c9f7c849950831dab12b76bda20e780179504d18dc82cbd523013c91dccd2999",
+     "9f3fa5d40e2f3501779433476f92d0f3c8d4b3a1b7344eb5786bb319b04ebe68",
+     "a57e956f7d4fc955192601afe60bc504d99f5be6cf24611426b727805daee73a",
+     "5f8b0f78d1b3b5e0277b2a076bbebdc60f2c9acaa12433091853db180efc5a3b",
+     "87ea122cf8f7b2804c8235c2772da35b66cdbc52877db841ec7b457aee77432a",
+     "11cabab231da50c0dba32be94f95af578f2a7327510f0ee8741ad8bf8633aa4c",
+     "7c71c65d4ba92aea200b9873e5cd2b66c19c91dd843bdde5f3366eceb38aae1b",
+     "d474d2dbe59828a5b9e93a94258f15c4aada97413e25bc24556b3bf57d717574",
+     "01ed9656acfea57f05319d73e2cb71e0e2f7291eaf4786bb7ffc8a531aa58938",
+     "fe6f2d435c983a3924b9bc177aa9e90241fd7bf45695a48619b01cb0fcba7eff",
+     "61bce168418746657bba49f20e6d7f3f6b475705ca7dd4291948b90d7cd24c97",
+     "810eeb54afabafd321658c9a3b84be5257a844f0f1f4090bbaac3482dc181b6e",
+     "d72ef1064c5cb293a21e95f313290e7b5125ef43d8a4e2cf550afc5611286a35",
+     "93b8b0916a84cfd17f889e5d775b05cbdb659024412f83056a75a46e4337032a",
+     "98d319c33bb1c4365aeea71b81c64717e7533f7fd563f5093286fb593b87571e",
+     "9eebf8737e1e5cca783790ff86cc2f4d8aab1c458d3821dcb52dc0d78fe9b28a",
+     "8b131860bef6141ef48eb6bba92085508c786d2adc7c7eb0f609d45e4d2b8075",
+     "375b77b652f1ceb297477cb9e1b651aebc7dc8883985d4ff76a2c72a636ef608",
+     "37ea3d7ba4511a5a095e375d96fbcda1aa6fc610e724fec4c83e48dbf5bba455",
+     "d767cf448aac22dab6789aa2717b21e3a67c2007c585bcca2e8e9752f3be0720",
+     "142e12b525bedb5f5648eea0a790d6a10e423cff44a612ddc33228a8a7a0a82f",
+     "bd88cd0745e452713350bcd07467130f3ef8bd63e04ef1a4d50cddde0563f404",
+     "2440cc66b8cce73856c0a50acefb2c232d0de7ecda4f8ec5c13aebabbb0f6faa",
+     "ecdc58f6d180e7fb9eddeef2c3caa2bd8f6b93ec67620b9c7d60a1db7ddeddec",
+     "9673322d8a3a27849072cd382ab1390603a40d6912f9c68d99ea4610818ac011"
+    ]
+   },
+   "verdict": "PASS"
+  }
+ ],
+ "pass": 90,
+ "fail": 0,
+ "provenance": {
+  "python": "3.14.4",
+  "numpy": "2.5.2",
+  "popcount": "np.bitwise_count",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "git_commit": "18b7e64612b4276f2719b57ba005fc04e3805ff5",
+  "argv": [],
+  "utc": "2026-10-12T21:34:23Z"
+ }
+}

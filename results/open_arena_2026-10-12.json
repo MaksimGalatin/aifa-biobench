@@ -1,0 +1,168 @@
+{
+ "benchmark": "AIfa-BioBench open retrieval arena \u2014 README \u00a78 suite",
+ "runs": [
+  {
+   "benchmark": "AIfa-BioBench open retrieval arena",
+   "dataset": {
+    "kind": "gaussian",
+    "n": 25000,
+    "dim": 512,
+    "queries": 100,
+    "seed": 42,
+    "queries_are_independent_of_index": true
+   },
+   "k": 10,
+   "ground_truth": "exact L2, float32, full sort per query",
+   "ground_truth_time_sec": 2.878,
+   "results": [
+    {
+     "method": "Exact brute force (float32)",
+     "recall_at_10_pct": 100.0,
+     "ndcg_at_10": 1.0,
+     "p50_latency_ms": 0.587,
+     "p95_latency_ms": 0.937,
+     "mean_latency_ms": 0.638,
+     "qps_single_query": 1567.5,
+     "build_time_sec": 0.003,
+     "index_mb": 48.92
+    },
+    {
+     "method": "Sign-LSH (2048 bits, pool 250)",
+     "recall_at_10_pct": 80.5,
+     "ndcg_at_10": 0.871492,
+     "p50_latency_ms": 5.517,
+     "p95_latency_ms": 5.989,
+     "mean_latency_ms": 5.588,
+     "qps_single_query": 179.0,
+     "build_time_sec": 0.099,
+     "index_mb": 58.93
+    },
+    {
+     "method": "Multi-table LSH (8 x 14 bits)",
+     "recall_at_10_pct": 0.1,
+     "ndcg_at_10": 0.002201,
+     "p50_latency_ms": 0.041,
+     "p95_latency_ms": 0.059,
+     "mean_latency_ms": 0.044,
+     "qps_single_query": 22860.8,
+     "build_time_sec": 0.114,
+     "index_mb": 50.57
+    }
+   ]
+  },
+  {
+   "benchmark": "AIfa-BioBench open retrieval arena",
+   "dataset": {
+    "kind": "clustered",
+    "n": 25000,
+    "dim": 512,
+    "queries": 100,
+    "seed": 42,
+    "queries_are_independent_of_index": true,
+    "clusters": 100,
+    "spread": 0.8
+   },
+   "k": 10,
+   "ground_truth": "exact L2, float32, full sort per query",
+   "ground_truth_time_sec": 2.849,
+   "results": [
+    {
+     "method": "Exact brute force (float32)",
+     "recall_at_10_pct": 100.0,
+     "ndcg_at_10": 1.0,
+     "p50_latency_ms": 0.755,
+     "p95_latency_ms": 1.005,
+     "mean_latency_ms": 0.768,
+     "qps_single_query": 1301.3,
+     "build_time_sec": 0.003,
+     "index_mb": 48.92
+    },
+    {
+     "method": "Sign-LSH (2048 bits, pool 250)",
+     "recall_at_10_pct": 100.0,
+     "ndcg_at_10": 1.0,
+     "p50_latency_ms": 5.609,
+     "p95_latency_ms": 5.93,
+     "mean_latency_ms": 5.63,
+     "qps_single_query": 177.6,
+     "build_time_sec": 0.112,
+     "index_mb": 58.93
+    },
+    {
+     "method": "Multi-table LSH (8 x 14 bits)",
+     "recall_at_10_pct": 8.1,
+     "ndcg_at_10": 0.151858,
+     "p50_latency_ms": 0.05,
+     "p95_latency_ms": 0.074,
+     "mean_latency_ms": 0.053,
+     "qps_single_query": 18880.7,
+     "build_time_sec": 0.108,
+     "index_mb": 50.57
+    }
+   ]
+  },
+  {
+   "benchmark": "AIfa-BioBench open retrieval arena",
+   "dataset": {
+    "kind": "clustered",
+    "n": 100000,
+    "dim": 768,
+    "queries": 200,
+    "seed": 42,
+    "queries_are_independent_of_index": true,
+    "clusters": 100,
+    "spread": 0.8
+   },
+   "k": 10,
+   "ground_truth": "exact L2, float32, full sort per query",
+   "ground_truth_time_sec": 59.709,
+   "results": [
+    {
+     "method": "Exact brute force (float32)",
+     "recall_at_10_pct": 100.0,
+     "ndcg_at_10": 1.0,
+     "p50_latency_ms": 5.556,
+     "p95_latency_ms": 6.638,
+     "mean_latency_ms": 5.687,
+     "qps_single_query": 175.8,
+     "build_time_sec": 0.022,
+     "index_mb": 293.35
+    },
+    {
+     "method": "Sign-LSH (2048 bits, pool 250)",
+     "recall_at_10_pct": 89.6,
+     "ndcg_at_10": 0.932636,
+     "p50_latency_ms": 19.859,
+     "p95_latency_ms": 22.914,
+     "mean_latency_ms": 20.221,
+     "qps_single_query": 49.5,
+     "build_time_sec": 0.507,
+     "index_mb": 323.38
+    },
+    {
+     "method": "Multi-table LSH (8 x 14 bits)",
+     "recall_at_10_pct": 8.55,
+     "ndcg_at_10": 0.162623,
+     "p50_latency_ms": 0.314,
+     "p95_latency_ms": 0.794,
+     "mean_latency_ms": 0.383,
+     "qps_single_query": 2610.9,
+     "build_time_sec": 0.8,
+     "index_mb": 299.4
+    }
+   ]
+  }
+ ],
+ "provenance": {
+  "python": "3.14.4",
+  "numpy": "2.5.2",
+  "popcount": "np.bitwise_count",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "git_commit": "18b7e64612b4276f2719b57ba005fc04e3805ff5",
+  "argv": [
+   "--suite"
+  ],
+  "utc": "2026-10-12T21:33:55Z"
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "benchmark": "AIfa-BioBench Merkle tree, RFC 6962 / RFC 9162 inclusion proofs",
+ "source": {
+  "kind": "synthetic neuron records, same generator as proof_of_connectome.py",
+  "n": 139255,
+  "seed": 42,
+  "note": "synthetic \u2014 not FlyWire data"
+ },
+ "metrics": {
+  "leaves": 139255,
+  "root_sha256": "57e8d00707c57d0baa48bc20bfbb8d07f85891622615a83604b0f513cdf92b81",
+  "tree_height": 18,
+  "build_time_sec": 0.173,
+  "proof_hashes_max": 18,
+  "proof_bytes_max": 576,
+  "proofs_checked": 10000,
+  "proofs_verified": 10000,
+  "verify_p50_us": 13.2,
+  "verify_p95_us": 14.2,
+  "tamper_trials_each": 1000,
+  "tamper_rejected": {
+   "modified_record": 1000,
+   "wrong_index": 1000,
+   "wrong_root": 1000
+  },
+  "wrong_index_trials": 1000
+ },
+ "known_weaknesses_check": {
+  "duplicate_last_leaf_same_root": {
+   "stamped_scheme": true,
+   "rfc6962": false
+  },
+  "inner_nodes_as_leaves_same_root": {
+   "stamped_scheme": true,
+   "rfc6962": false
+  }
+ },
+ "provenance": {
+  "python": "3.14.4",
+  "numpy": "2.5.2",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "utc": "2026-10-12T21:33:56Z",
+  "runtime_s": 1.3
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "benchmark": "AIfa-BioBench Merkle tree, RFC 6962 / RFC 9162 inclusion proofs",
+ "source": {
+  "kind": "FlyWire v783 proofread_connections_783.feather",
+  "zenodo": "10.5281/zenodo.10676866",
+  "license": "CC BY 4.0",
+  "md5": "f48f972d262323a102aed49af1396b8a",
+  "serialization": "one leaf per row of proofread_connections_783.feather, rows sorted by (pre_pt_root_id, post_pt_root_id, neuropil); leaf data = UTF-8 of 'pre_pt_root_id|post_pt_root_id|neuropil|syn_count' (integers in decimal)"
+ },
+ "metrics": {
+  "leaves": 16847997,
+  "root_sha256": "d8a3400b4c26b06c977306c45147657b1700bdb9baa2ee54406b92763c4b5077",
+  "tree_height": 25,
+  "build_time_sec": 35.954,
+  "proof_hashes_max": 25,
+  "proof_bytes_max": 800,
+  "proofs_checked": 10000,
+  "proofs_verified": 10000,
+  "verify_p50_us": 34.4,
+  "verify_p95_us": 43.0,
+  "tamper_trials_each": 1000,
+  "tamper_rejected": {
+   "modified_record": 1000,
+   "wrong_index": 1000,
+   "wrong_root": 1000
+  },
+  "wrong_index_trials": 1000
+ },
+ "known_weaknesses_check": {
+  "duplicate_last_leaf_same_root": {
+   "stamped_scheme": true,
+   "rfc6962": false
+  },
+  "inner_nodes_as_leaves_same_root": {
+   "stamped_scheme": true,
+   "rfc6962": false
+  }
+ },
+ "example_inclusion_proof": {
+  "leaf_index": 16239411,
+  "record": "720575940644702112|720575940625952755|LO_L|2405",
+  "leaf_hash": "030c95f4cc3e3da6d6f0481280baf1dc5fd09536cabeaabebcdfb6a5efbe6872",
+  "audit_path": [
+   "c9f7c849950831dab12b76bda20e780179504d18dc82cbd523013c91dccd2999",
+   "9f3fa5d40e2f3501779433476f92d0f3c8d4b3a1b7344eb5786bb319b04ebe68",
+   "a57e956f7d4fc955192601afe60bc504d99f5be6cf24611426b727805daee73a",
+   "5f8b0f78d1b3b5e0277b2a076bbebdc60f2c9acaa12433091853db180efc5a3b",
+   "87ea122cf8f7b2804c8235c2772da35b66cdbc52877db841ec7b457aee77432a",
+   "11cabab231da50c0dba32be94f95af578f2a7327510f0ee8741ad8bf8633aa4c",
+   "7c71c65d4ba92aea200b9873e5cd2b66c19c91dd843bdde5f3366eceb38aae1b",
+   "d474d2dbe59828a5b9e93a94258f15c4aada97413e25bc24556b3bf57d717574",
+   "01ed9656acfea57f05319d73e2cb71e0e2f7291eaf4786bb7ffc8a531aa58938",
+   "fe6f2d435c983a3924b9bc177aa9e90241fd7bf45695a48619b01cb0fcba7eff",
+   "61bce168418746657bba49f20e6d7f3f6b475705ca7dd4291948b90d7cd24c97",
+   "810eeb54afabafd321658c9a3b84be5257a844f0f1f4090bbaac3482dc181b6e",
+   "d72ef1064c5cb293a21e95f313290e7b5125ef43d8a4e2cf550afc5611286a35",
+   "93b8b0916a84cfd17f889e5d775b05cbdb659024412f83056a75a46e4337032a",
+   "98d319c33bb1c4365aeea71b81c64717e7533f7fd563f5093286fb593b87571e",
+   "9eebf8737e1e5cca783790ff86cc2f4d8aab1c458d3821dcb52dc0d78fe9b28a",
+   "8b131860bef6141ef48eb6bba92085508c786d2adc7c7eb0f609d45e4d2b8075",
+   "375b77b652f1ceb297477cb9e1b651aebc7dc8883985d4ff76a2c72a636ef608",
+   "37ea3d7ba4511a5a095e375d96fbcda1aa6fc610e724fec4c83e48dbf5bba455",
+   "d767cf448aac22dab6789aa2717b21e3a67c2007c585bcca2e8e9752f3be0720",
+   "142e12b525bedb5f5648eea0a790d6a10e423cff44a612ddc33228a8a7a0a82f",
+   "bd88cd0745e452713350bcd07467130f3ef8bd63e04ef1a4d50cddde0563f404",
+   "2440cc66b8cce73856c0a50acefb2c232d0de7ecda4f8ec5c13aebabbb0f6faa",
+   "ecdc58f6d180e7fb9eddeef2c3caa2bd8f6b93ec67620b9c7d60a1db7ddeddec",
+   "9673322d8a3a27849072cd382ab1390603a40d6912f9c68d99ea4610818ac011"
+  ]
+ },
+ "provenance": {
+  "python": "3.14.4",
+  "numpy": "2.5.2",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "utc": "2026-10-12T21:26:54Z",
+  "runtime_s": 64.1
+ }
+}
