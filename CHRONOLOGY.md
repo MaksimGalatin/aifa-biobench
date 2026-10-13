@@ -39,3 +39,8 @@
   — десять намеренных ошибок, каждая поймана своим тестом.
 - CI: тесты на Linux, Windows, macOS × Python 3.10–3.13; сверка README и перепрогон на каждом push.
 - `CITATION.cff` (проверен валидатором cffconvert), `requirements-dev.txt`, манифест 12.10 с меткой OpenTimestamps.
+
+## 13.10.2026 — три инструмента проверки под MIT
+
+- По слову Архитектора: `bench/open_arena.py`, `bench/check_claims.py`, `bench/merkle_rfc6962.py` — MIT (`LICENSE-MIT-tools.txt`), чтобы арену и сверку могли брать в работу и компании.
+- Всё остальное в репозитории — по-прежнему PolyForm Noncommercial 1.0.0; движок NOCTURNE — AGPL-3.0 в своём репозитории.
