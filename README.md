@@ -1,6 +1,6 @@
 # AIfa-BioBench — open results
 
-[![Open benchmark scripts](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml/badge.svg)](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml)
+[![Open benchmark scripts](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml/badge.svg)](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml) [![DOI](https://zenodo.org/badge/1391059995.svg)](https://zenodo.org/badge/latestdoi/1391059995)
 
 Open, timestamped results of the benchmarks for the bio-inspired algorithms behind AIfa ACR (sparse
 "fly hash" projection, APL novelty gate, CANN ring attractor, CX steering, bilateral verifier) — and an

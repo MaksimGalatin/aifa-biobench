@@ -13,8 +13,8 @@ authors:
 repository-code: "https://github.com/MaksimGalatin/aifa-biobench"
 url: "https://aifa.works/acr"
 license: PolyForm-Noncommercial-1.0.0
-version: "2026.10.12"
-date-released: "2026-10-12"
+version: "2026.10.18"
+date-released: "2026-10-18"
 keywords:
   - benchmark
   - approximate nearest neighbour search
