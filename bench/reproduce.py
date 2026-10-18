@@ -64,9 +64,9 @@ def compare_json(label, want, got, skip=("provenance", "params.output")):
 
 def run_script(args, timeout=3600):
     t0 = time.time()
-    # 18.10.2026: одно ядро OpenBLAS для всех машин. Коды Sign-LSH — знак float32-проекций, порядок сложения
-    # зависит от ядра; на сервере с AVX-512 Recall@10 выходил 80.7 вместо заверенных 80.5. Haswell (AVX2) — ядро
-    # машины замера. Если ядро уже задано в окружении — не трогаем.
+    # 18.10.2026: одно ядро OpenBLAS (Haswell — ядро машины замера) для одинаковой арифметики BLAS на всех машинах.
+    # Расхождение Sign-LSH на части серверов GitHub (80.7 против 80.5) этим НЕ устранилось — причина ищется
+    # (вероятно, собственные SIMD-циклы NumPy). Если ядро уже задано в окружении — не трогаем.
     env = dict(os.environ)
     env.setdefault("OPENBLAS_CORETYPE", "Haswell")
     p = subprocess.run([sys.executable] + args, cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
