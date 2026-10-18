@@ -16,6 +16,26 @@ honest record of what they do and do not achieve, including where standard metho
   Linux, Windows and macOS with Python 3.10–3.13 at every push.
 - **Cite:** GitHub's "Cite this repository" button uses [`CITATION.cff`](CITATION.cff).
 
+## Quick start — check us yourself
+
+Don't trust the tables below — check them. Three commands on any machine with Python 3.10+:
+
+```bash
+git clone https://github.com/MaksimGalatin/aifa-biobench.git && cd aifa-biobench
+pip install -r requirements.txt
+python bench/check_claims.py      # every number in this README against the result file it comes from
+python bench/open_arena.py        # re-run the open retrieval arena (§8) on your machine
+```
+
+Have a retrieval method of your own? Any class with `build(X)` and `search(q, k)` plugs into the same arena:
+
+```bash
+python bench/open_arena.py --methods exact,signlsh,my_package.my_module:MyIndex
+```
+
+Post your numbers as an issue ("Arena result" template) — results where our methods lose are as welcome as
+results where they win. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Free and paid parts
 
 | This repository (free for non-commercial use, PolyForm Noncommercial 1.0.0) | AIfa-BioBench Pro (paid, private) |
