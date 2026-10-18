@@ -76,6 +76,33 @@ def run_script(args, timeout=3600):
     return time.time() - t0
 
 
+def arena_diagnostics(res, arena):
+    """18.10.2026: на части серверов GitHub Sign-LSH даёт Recall@10 80.7 вместо заверенных 80.5 (тот же код).
+    Закрепление ядра OpenBLAS этого не убрало. Печатаем, какие наборы инструкций видит NumPy, и при расхождении
+    повторяем арену отдельным процессом с отключённым AVX-512 в NumPy — чтобы источник был виден по факту."""
+    import numpy as np
+    try:
+        feats = np._core._multiarray_umath.__cpu_features__
+        on = sorted(k for k, v in feats.items() if v and ("AVX512" in k or k.startswith("X86_V")))
+        print(f"DIAG numpy {np.__version__}; CPU features in use: {', '.join(on) or 'none of AVX-512/X86_V*'}")
+    except Exception as e:                                          # другие сборки NumPy — не мешаем проверке
+        print(f"DIAG numpy {np.__version__}; cpu features unavailable: {e}")
+    print(f"DIAG OPENBLAS_CORETYPE={os.environ.get('OPENBLAS_CORETYPE', '<unset>')} "
+          f"NPY_DISABLE_CPU_FEATURES={os.environ.get('NPY_DISABLE_CPU_FEATURES', '<unset>')}")
+    mine = res["results"][0]
+    want = arena["Sign-LSH / BQ 1-Bit"]
+    if round(mine["recall_at_10_pct"], 2) == want["recall_at_10_pct"]:
+        return
+    env = dict(os.environ)
+    env["NPY_DISABLE_CPU_FEATURES"] = "X86_V4 AVX512F AVX512CD AVX512_SKX AVX512_CLX AVX512_CNL AVX512_ICL AVX512_SPR"
+    p = subprocess.run([sys.executable, os.path.join(ROOT, "bench", "open_arena.py"), "--methods", "signlsh"],
+                       cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
+                       timeout=1800)
+    line = next((l for l in p.stdout.splitlines() if l.startswith("Sign-LSH")), p.stderr[-300:])
+    print(f"DIAG Sign-LSH here {mine['recall_at_10_pct']:.2f}% / {mine['ndcg_at_10']:.4f}; "
+          f"with NumPy AVX-512 disabled: {line.strip()}")
+
+
 def flywire_present():
     return all(os.path.exists(os.path.join(HERE, "data", f))
                for f in ("proofread_connections_783.feather", "proofread_root_ids_783.npy"))
@@ -120,6 +147,7 @@ def main(argv=None):
         record(f"arena {theirs}: recall_at_10_pct", arena[theirs]["recall_at_10_pct"], round(mine["recall_at_10_pct"], 2))
         record(f"arena {theirs}: ndcg_at_10", arena[theirs]["ndcg_at_10"], round(mine["ndcg_at_10"], 4))
         record(f"arena {theirs}: p50_latency_ms", arena[theirs]["p50_latency_ms"], mine["p50_latency_ms"], "info")
+    arena_diagnostics(res, arena)
 
     # 4. Дерево Меркла по RFC 6962 на синтетике
     import merkle_rfc6962 as mk
