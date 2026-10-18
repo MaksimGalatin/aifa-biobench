@@ -12,9 +12,12 @@ from conftest import ROOT, RESULTS
 # Файлы, которые после даты манифеста законно сменили текст; их заверенные версии — в истории git:
 #  23.09: README.md (текст полного репозитория), LICENSE и заголовки двух скриптов (смена лицензии 05.10, 067f3af);
 #  05.10: README.md (12.10.2026 дописаны разделы 8–9, тесты и исправлено NDCG 0.872 -> 0.871; версия 05.10 — 18b7e64).
+#  12.10: README.md (18.10.2026 бейдж DOI Zenodo) и CITATION.cff (версия 2026.10.18 для архивного релиза Zenodo);
+#         и сам этот тест (дописана строка 12.10); заверенные версии 12.10 — 926629d.
 CHANGED_SINCE = {
     "MANIFEST_2026-09-23.sha256": {"README.md", "LICENSE", "bench/olfactory_filter_run.py", "bench/proof_of_connectome.py"},
     "MANIFEST_2026-10-05.sha256": {"README.md"},
+    "MANIFEST_2026-10-12.sha256": {"README.md", "CITATION.cff", "tests/test_results_integrity.py"},
 }
 OTS_MAGIC = b"\x00OpenTimestamps\x00\x00Proof\x00\xbf\x89\xe2\xe8\x84\xe8\x92\x94"  # заголовок формата .ots
 
