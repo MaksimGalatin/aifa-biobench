@@ -64,8 +64,13 @@ def compare_json(label, want, got, skip=("provenance", "params.output")):
 
 def run_script(args, timeout=3600):
     t0 = time.time()
+    # 18.10.2026: одно ядро OpenBLAS для всех машин. Коды Sign-LSH — знак float32-проекций, порядок сложения
+    # зависит от ядра; на сервере с AVX-512 Recall@10 выходил 80.7 вместо заверенных 80.5. Haswell (AVX2) — ядро
+    # машины замера. Если ядро уже задано в окружении — не трогаем.
+    env = dict(os.environ)
+    env.setdefault("OPENBLAS_CORETYPE", "Haswell")
     p = subprocess.run([sys.executable] + args, cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
-                       errors="replace", timeout=timeout)
+                       errors="replace", timeout=timeout, env=env)
     if p.returncode != 0:
         raise SystemExit(f"{' '.join(args)} failed with code {p.returncode}:\n{p.stderr[-2000:]}")
     return time.time() - t0

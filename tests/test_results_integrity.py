@@ -17,7 +17,7 @@ from conftest import ROOT, RESULTS
 CHANGED_SINCE = {
     "MANIFEST_2026-09-23.sha256": {"README.md", "LICENSE", "bench/olfactory_filter_run.py", "bench/proof_of_connectome.py"},
     "MANIFEST_2026-10-05.sha256": {"README.md"},
-    "MANIFEST_2026-10-12.sha256": {"README.md", "CITATION.cff", "tests/test_results_integrity.py"},
+    "MANIFEST_2026-10-12.sha256": {"README.md", "CITATION.cff", "tests/test_results_integrity.py", "bench/reproduce.py"},
 }
 OTS_MAGIC = b"\x00OpenTimestamps\x00\x00Proof\x00\xbf\x89\xe2\xe8\x84\xe8\x92\x94"  # заголовок формата .ots
 

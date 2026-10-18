@@ -168,7 +168,12 @@ clusters on the unit sphere (noise norm 0.8 of a centre), queries drawn fresh fr
 vectors per cluster a shortlist of 250 covers the query's whole cluster, which is why Sign-LSH reaches 100% there and
 not at 100,000 vectors. Sign-LSH: 2,048 bits, shortlist 250, exact rerank; multi-table LSH: 8 tables × 14 bits.
 Measured 2026-10-12 on an Intel Core i7-14700, Python 3.14.4, NumPy 2.5.2, one query at a time;
-file `results/open_arena_2026-10-12.json`. Recall is deterministic; latency changes with machine load.
+file `results/open_arena_2026-10-12.json`. Recall is deterministic on a given machine; latency changes with machine load. Across CPUs it can move by a
+few tenths of a point: the Sign-LSH codes are signs of float32 projections, and OpenBLAS picks a different kernel
+(a different order of additions) on different processors, which can flip the sign of projections close to zero.
+On a GitHub server with AVX-512 we once got Recall@10 80.7% / NDCG@10 0.8728 instead of the stamped 80.5% / 0.8715.
+To reproduce the stamped values exactly, run with `OPENBLAS_CORETYPE=Haswell` (the kernel of the machine they were
+measured on); `bench/reproduce.py` and CI do this by default.
 
 What this shows that the stamped run did not:
 
