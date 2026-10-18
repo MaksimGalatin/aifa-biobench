@@ -174,6 +174,8 @@ instead of the stamped 80.5% / 0.8715, on others exactly the stamped values. The
 projections, so a different order of floating-point additions on another CPU can flip a projection close to zero.
 Pinning the OpenBLAS kernel (`OPENBLAS_CORETYPE=Haswell`) did not remove the difference, so the exact source is
 still being traced; until then treat the third digit of that row as machine-dependent.
+`bench/reproduce.py` reports such a run as NEAR — within the same tolerance the test suite uses (one point of
+recall, 0.01 NDCG) — instead of FAIL; an exact match is still reported as PASS.
 
 What this shows that the stamped run did not:
 

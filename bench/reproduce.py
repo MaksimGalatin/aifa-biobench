@@ -35,9 +35,18 @@ def stamped(name):
         return json.load(fh)
 
 
-def record(check, want, got, kind="exact"):
+def record(check, want, got, kind="exact", tol=None):
     if kind == "info":
         ok = None
+    elif kind == "near":
+        # 18.10.2026: строка Sign-LSH на другом процессоре сдвигается на десятые доли (README §8, тот же допуск,
+        # что в tests/test_open_arena.py): точное совпадение — PASS, в пределах допуска — NEAR, дальше — FAIL.
+        if want == got:
+            ok = True
+        else:
+            near = abs(want - got) <= tol
+            rows.append({"check": check, "stamped": want, "fresh": got, "verdict": "NEAR" if near else "FAIL"})
+            return
     elif isinstance(want, float) or isinstance(got, float):
         ok = want == got or (isinstance(want, (int, float)) and isinstance(got, (int, float))
                              and math.isclose(want, got, rel_tol=1e-9, abs_tol=1e-12))
@@ -144,8 +153,11 @@ def main(argv=None):
     arena = {r["method"]: r for r in stamped("binary_arena_results.json")}
     res = oa.run(oa.parser().parse_args(["--methods", "signlsh,multitable"]))
     for mine, theirs in zip(res["results"], ("Sign-LSH / BQ 1-Bit", "MultiHash Table LSH")):
-        record(f"arena {theirs}: recall_at_10_pct", arena[theirs]["recall_at_10_pct"], round(mine["recall_at_10_pct"], 2))
-        record(f"arena {theirs}: ndcg_at_10", arena[theirs]["ndcg_at_10"], round(mine["ndcg_at_10"], 4))
+        sign = theirs.startswith("Sign-LSH")
+        record(f"arena {theirs}: recall_at_10_pct", arena[theirs]["recall_at_10_pct"], round(mine["recall_at_10_pct"], 2),
+               "near" if sign else "exact", 1.0)
+        record(f"arena {theirs}: ndcg_at_10", arena[theirs]["ndcg_at_10"], round(mine["ndcg_at_10"], 4),
+               "near" if sign else "exact", 0.01)
         record(f"arena {theirs}: p50_latency_ms", arena[theirs]["p50_latency_ms"], mine["p50_latency_ms"], "info")
     arena_diagnostics(res, arena)
 
@@ -188,6 +200,7 @@ def main(argv=None):
     for r in rows:
         print(f"{r['verdict']:<7} {r['check']:<62} stamped={r['stamped']!r:<30.30} fresh={r['fresh']!r:.40}")
     print(f"\n{len(passes)} PASS, {len(fails)} FAIL, "
+          f"{sum(r['verdict'] == 'NEAR' for r in rows)} NEAR (Sign-LSH within the cross-CPU tolerance of README §8), "
           f"{sum(r['verdict'] == 'INFO' for r in rows)} INFO (timings, machine-dependent), "
           f"{sum(r['verdict'] == 'SKIPPED' for r in rows)} SKIPPED — {time.time() - t_start:.0f} s")
     with open(os.path.join(FRESH, "reproduce_report.json"), "w", encoding="utf-8", newline="\n") as fh:
