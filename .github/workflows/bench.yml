@@ -9,6 +9,11 @@ on: [push, pull_request]
 permissions:
   contents: read
 
+# 18.10.2026: одно ядро OpenBLAS на всех серверах. Коды Sign-LSH — знак float32-проекций, а порядок сложения
+# зависит от ядра: на сервере с AVX-512 Recall@10 выходил 80,7 вместо заверенных 80,5. Haswell (AVX2) — ядро машины замера.
+env:
+  OPENBLAS_CORETYPE: Haswell
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -30,7 +35,8 @@ jobs:
       - name: Every tracked file matches the manifest of 12 October 2026
         # 18.10.2026 законно изменены README.md (бейдж DOI Zenodo), CITATION.cff (версия 2026.10.18 для архивного релиза)
         # и tests/test_results_integrity.py (список изменённых); их версии 12 октября — коммит 926629d.
-        run: grep -v -E ' (README\.md|CITATION\.cff|tests/test_results_integrity\.py)$' results/MANIFEST_2026-10-12.sha256 | sha256sum -c
+        # bench/reproduce.py — 18.10.2026 закрепление ядра OpenBLAS для запусков у людей.
+        run: grep -v -E ' (README\.md|CITATION\.cff|tests/test_results_integrity\.py|bench/reproduce\.py)$' results/MANIFEST_2026-10-12.sha256 | sha256sum -c
       - name: Install dependencies
         run: pip install numpy scipy
       - name: Every number in README.md equals the value in its result file
