@@ -1,10 +1,40 @@
-# AIfa-BioBench — open results
+# AIfa-BioBench
 
-[![Open benchmark scripts](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml/badge.svg)](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml) [![DOI](https://zenodo.org/badge/1391059995.svg)](https://zenodo.org/badge/latestdoi/1391059995)
+### Open, timestamped benchmarks of fly-brain-inspired algorithms — including every place where standard methods win
+
+[![Open benchmark scripts](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml/badge.svg)](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml) [![DOI](https://zenodo.org/badge/1391059995.svg)](https://zenodo.org/badge/latestdoi/1391059995) ![licence](https://img.shields.io/badge/licence-PolyForm%20Noncommercial%201.0.0-blue) ![python](https://img.shields.io/badge/python-3.10%E2%80%933.13-3776AB) ![CI](https://img.shields.io/badge/CI-Linux%20%C2%B7%20Windows%20%C2%B7%20macOS-informational) ![timestamps](https://img.shields.io/badge/OpenTimestamps-Bitcoin-F7931A) ![data](https://img.shields.io/badge/connectome-FlyWire%20v783-2E8B57)
 
 Open, timestamped results of the benchmarks for the bio-inspired algorithms behind AIfa ACR (sparse
 "fly hash" projection, APL novelty gate, CANN ring attractor, CX steering, bilateral verifier) — and an
 honest record of what they do and do not achieve, including where standard methods win.
+
+Most benchmark repositories show where a method shines. This one keeps the whole picture: the runs where the
+fruit-fly-inspired methods lose to ordinary baselines are published with the same care as the runs where they
+help, every number is tied to a machine-readable file, every file is fixed by a Bitcoin timestamp, and a script
+checks that the text below still says what the files say.
+
+## At a glance
+
+| Question | Answer from the measurements | Section |
+|---|---|---|
+| Does FlyHash beat exact search on 50,000 × 1024 vectors? | **No.** Recall@10 39.55% against 100% for exact FAISS, and exact FAISS is faster too | [§1](#1-vector-retrieval--50000-vectors--1024-top-10-independent-queries) |
+| FlyHash or Sign-LSH for binary codes? | Sign-LSH: 80.5% against 18.9% Recall@10; FlyHash is 85× sparser | [§2](#2-binary-retrieval-duel--25000--512-100-queries-seed-42) |
+| Is the fly's six-claw wiring optimal for this task? | **No** — d = 6 gives 19.8%, d = 16 gives 24.9% | [§3](#3-claw-count-sweep--is-the-flys-d--6-optimal) |
+| What makes the web agent succeed? | Remembering visited links (95.0%); APL, CANN and the verifier add no measurable benefit here | [§4](#4-agent-benchmark--real-engines) |
+| How does FlyHash take damage? | It loses accuracy faster than Sign-LSH under dropout | [§5](#5-robustness--real-dropout-5-seeds-512-bit-codes-shortlist-50) |
+| What does the real connectome look like? | 139,255 neurons, 54,492,922 synapses, C = 0.160, L = 4.03 — reproducible here | [§6](#6-real-connectome-statistics--reproducible-from-this-repository) |
+| Can anyone reproduce the duel without our engine? | Yes — the open arena reproduces the stamped Sign-LSH and multi-table rows and takes your own method | [§8](#8-open-retrieval-arena--reproduce-2-test-your-own-method-12102026) |
+| Can the connectome be committed to verifiably? | Yes — an RFC 6962 root over all 16,847,997 rows, proofs of at most 25 hashes | [§9](#9-merkle-proofs-on-the-real-connectome--rfc-6962-12102026) |
+
+## Contents
+
+- [At a glance](#at-a-glance) · [Quick start](#quick-start--check-us-yourself) · [Free and paid parts](#free-and-paid-parts)
+- [Results §1–§9](#results-measured-2109-and-23092026-intel-core-i7-14700-python-314-numpy-25)
+- [Run what is in this repository](#run-what-is-in-this-repository) · [Tests and machine checks](#tests-and-machine-checks)
+- [Timestamps](#timestamps--how-to-check-that-the-numbers-were-not-changed-later) · [Not measured / withdrawn](#not-measured--withdrawn) · [Layout](#layout)
+- [Cite](#cite) · [Author and licence](#author)
+
+## The rules this repository keeps
 
 - **Licence:** PolyForm Noncommercial 1.0.0 (this repository) — free for non-commercial use; commercial use only under a written licence (contact@codeofdigitaleternity.com). Connectome data: FlyWire v783, CC BY 4.0 (licence of its authors).
 - **Pages that cite these numbers:** <https://aifa.works/acr> · <https://www.codeofdigitaleternity.com/acr>
@@ -268,8 +298,21 @@ Verify with `ots verify results/MANIFEST_2026-09-23.sha256.ots` (needs a Bitcoin
 `.ots` file and the file it stamps onto <https://opentimestamps.org>.
 
 The state of 12 October 2026 — every script, test and result file, including §8 and §9 — is in
-`results/MANIFEST_2026-10-12.sha256` with its OpenTimestamps proof next to it; a fresh proof is pending until a
-Bitcoin block confirms it (usually a few hours) and is then completed with `ots upgrade`.
+`results/MANIFEST_2026-10-12.sha256` with its OpenTimestamps proof next to it. That proof is complete: it is
+attested in Bitcoin blocks 971144 (mined 12 Oct 2026, 21:57 UTC), 971147 and 971177. Checked on 23.10.2026 by
+reading the `.ots` file and comparing each attested Merkle root with the block header from an independent block
+explorer — all match.
+
+| Manifest | What it fixes | Bitcoin blocks |
+|---|---|---|
+| `MANIFEST_2026-09-23.sha256` | the full repository of that day, with the measurements of §1–§7 | 968268, 968274 |
+| `MANIFEST_2026-10-05.sha256` | the open repository after the move to PolyForm Noncommercial | 969997, 970029 |
+| `MANIFEST_2026-10-12.sha256` | every script, test and result file, including §8 and §9 | 971144, 971147, 971177 |
+
+Against today's files, `sha256sum -c --ignore-missing results/MANIFEST_2026-10-12.sha256` gives 83 OK and 4 changed:
+`README.md`, `CITATION.cff`, `bench/reproduce.py` and `tests/test_results_integrity.py` were edited after the stamp
+(the DOI badge, the Zenodo release and the cross-CPU tolerance of §8 — see `git log`). No result file has changed;
+the test suite lists exactly which files may differ from each manifest and fails on any other.
 
 Then check the files against the stamped manifest **before** running anything:
 
@@ -311,8 +354,22 @@ results/                    machine-readable outputs, manifests and .ots proofs
 CITATION.cff                how to cite this repository and the FlyWire data
 ```
 
+## Cite
+
+- **This version (v2026.10.18):** [10.5281/zenodo.23451978](https://doi.org/10.5281/zenodo.23451978)
+- **All versions:** [10.5281/zenodo.23451977](https://doi.org/10.5281/zenodo.23451977)
+- **From GitHub:** the "Cite this repository" button uses [`CITATION.cff`](CITATION.cff), which also cites the FlyWire
+  papers and the v783 data release.
+- **Connectome data:** FlyWire v783, [10.5281/zenodo.10676866](https://doi.org/10.5281/zenodo.10676866), CC BY 4.0.
+
 ## Author
 
-Maksim Galatin — CODE Eternal / AIfa Works. Contact: contact@codeofdigitaleternity.com
+Maksim Galatin — CODE Eternal / AIfa Works · ORCID [0009-0002-0187-8547](https://orcid.org/0009-0002-0187-8547) ·
+Contact: contact@codeofdigitaleternity.com
+
+Part of [CODE Eternal](https://aifa.works): [aifa.works](https://aifa.works) ·
+[codeofdigitaleternity.com](https://www.codeofdigitaleternity.com) · [aifa.digital](https://aifa.digital) ·
+[radiocode.space](https://radiocode.space). Sister project: [PADAM · NOCTURNE](https://github.com/MaksimGalatin/padam-nocturne),
+memory for AI agents ([10.5281/zenodo.23451980](https://doi.org/10.5281/zenodo.23451980)).
 
 Licensed under the PolyForm Noncommercial License 1.0.0 — see [LICENSE](LICENSE). Commercial use requires a written licence with payment to the licensor: contact@codeofdigitaleternity.com.
