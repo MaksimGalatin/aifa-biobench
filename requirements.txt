@@ -2,4 +2,4 @@ numpy>=1.22.0
 scipy>=1.10.0
 # only for bench/connectome_real_metrics.py (FlyWire v783 feather file):
 pandas>=2.0
-pyarrow>=17.0.0
+pyarrow>=23.0.1
