@@ -14,10 +14,15 @@ from conftest import ROOT, RESULTS
 #  05.10: README.md (12.10.2026 дописаны разделы 8–9, тесты и исправлено NDCG 0.872 -> 0.871; версия 05.10 — 18b7e64).
 #  12.10: README.md (18.10.2026 бейдж DOI Zenodo) и CITATION.cff (версия 2026.10.18 для архивного релиза Zenodo);
 #         и сам этот тест (дописана строка 12.10); заверенные версии 12.10 — 926629d.
+#  09.11.2026: requirements.txt и requirements-dev.txt — нижние границы без известных уязвимостей (аудит
+#         зависимостей: pyarrow>=23.0.1 из-за GHSA-rgxp-2hwp-jwgg, scipy>=1.10); коммиты e1280a0 и 725d954.
+#         Заверенные версии — в истории git до e1280a0. До этой строки CI открытой части был красным с 09.11 18:44.
 CHANGED_SINCE = {
-    "MANIFEST_2026-09-23.sha256": {"README.md", "LICENSE", "bench/olfactory_filter_run.py", "bench/proof_of_connectome.py"},
-    "MANIFEST_2026-10-05.sha256": {"README.md"},
-    "MANIFEST_2026-10-12.sha256": {"README.md", "CITATION.cff", "tests/test_results_integrity.py", "bench/reproduce.py"},
+    "MANIFEST_2026-09-23.sha256": {"README.md", "LICENSE", "bench/olfactory_filter_run.py", "bench/proof_of_connectome.py",
+                                   "requirements.txt", "requirements-dev.txt"},
+    "MANIFEST_2026-10-05.sha256": {"README.md", "requirements.txt", "requirements-dev.txt"},
+    "MANIFEST_2026-10-12.sha256": {"README.md", "CITATION.cff", "tests/test_results_integrity.py", "bench/reproduce.py",
+                                   "requirements.txt", "requirements-dev.txt"},
 }
 OTS_MAGIC = b"\x00OpenTimestamps\x00\x00Proof\x00\xbf\x89\xe2\xe8\x84\xe8\x92\x94"  # заголовок формата .ots
 

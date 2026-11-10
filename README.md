@@ -253,6 +253,8 @@ strongest connection in the brain (2405 synapses, neuropil LO_L); the tests veri
 
 ## Run what is in this repository
 
+Same environment on any machine: `docker build -t aifa-biobench . && docker run --rm aifa-biobench` (tests, the claims check and the quick re-run; see the `Dockerfile` for the full re-run with FlyWire).
+
 ```bash
 git clone https://github.com/MaksimGalatin/aifa-biobench.git
 cd aifa-biobench
@@ -261,7 +263,7 @@ python bench/proof_of_connectome.py --n-neurons 5000
 python bench/olfactory_filter_run.py
 python bench/open_arena.py                        # §8: exact, Sign-LSH, multi-table LSH
 python bench/merkle_rfc6962.py                    # §9: RFC 6962 tree on synthetic records
-# after downloading FlyWire v783 into bench/data/ (see bench/data/README.md):
+python bench/data/fetch.py                        # FlyWire v783 from Zenodo (≈ 853 MB), md5 checked against the record
 python bench/connectome_real_metrics.py
 python bench/connectome_topology_extra.py
 python bench/connectome_transmitters.py
@@ -372,4 +374,4 @@ Part of [CODE Eternal](https://aifa.works): [aifa.works](https://aifa.works) ·
 [radiocode.space](https://radiocode.space). Sister project: [PADAM · NOCTURNE](https://github.com/MaksimGalatin/padam-nocturne),
 memory for AI agents ([10.5281/zenodo.23451980](https://doi.org/10.5281/zenodo.23451980)).
 
-Licensed under the PolyForm Noncommercial License 1.0.0 — see [LICENSE](LICENSE). Commercial use requires a written licence with payment to the licensor: contact@codeofdigitaleternity.com.
+Licensed under the PolyForm Noncommercial License 1.0.0 — see [LICENSE](LICENSE). Commercial use requires a written licence with payment to the licensor: contact@codeofdigitaleternity.com. Three tools are also under MIT; what covers which file, on one page: [LICENSE-MATRIX.md](LICENSE-MATRIX.md).
