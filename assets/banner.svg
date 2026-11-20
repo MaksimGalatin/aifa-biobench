@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="55%" stop-color="#101830"/>
+      <stop offset="100%" stop-color="#06202a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="280" rx="18" fill="url(#bg)"/>
+  <g opacity="0.14" stroke="#6366f1" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70"/>
+    <line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="300" y1="0" x2="300" y2="280"/>
+    <line x1="600" y1="0" x2="600" y2="280"/>
+    <line x1="900" y1="0" x2="900" y2="280"/>
+  </g>
+  <rect x="44" y="34" width="6" height="212" rx="3" fill="url(#accent)"/>
+  <text x="72" y="96" fill="#f8fafc" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="46" font-weight="700">AIfa-BioBench · Open FlyWire v783</text>
+  <text x="72" y="140" fill="#94a3b8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="22">Reproducible Bio-Inspired Retrieval &amp; Agent Benchmarks — Publishing Wins and Losses Verbatim</text>
+  <rect x="72" y="172" width="1056" height="2" fill="url(#accent)" opacity="0.55"/>
+  <text x="72" y="212" fill="#a5b4fc" font-family="Consolas, monospace" font-size="18">139,255 Neurons · 54,492,922 Synapses · Bitcoin OpenTimestamps (Blocks 968268–971177) · RFC 6962</text>
+  <text x="72" y="242" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="15">Scripts &amp; Results: PolyForm Noncommercial 1.0.0  |  Open Arena, Checker &amp; Merkle: MIT  |  Pro Engine: Commercial</text>
+  <g transform="translate(1035,52)">
+    <circle cx="60" cy="60" r="50" fill="none" stroke="url(#accent)" stroke-width="2.5"/>
+    <circle cx="38" cy="48" r="7" fill="#6366f1"/>
+    <circle cx="82" cy="44" r="7" fill="#14b8a6"/>
+    <circle cx="62" cy="84" r="7" fill="#f59e0b"/>
+    <line x1="38" y1="48" x2="82" y2="44" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="38" y1="48" x2="62" y2="84" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="82" y1="44" x2="62" y2="84" stroke="#94a3b8" stroke-width="2"/>
+  </g>
+</svg>

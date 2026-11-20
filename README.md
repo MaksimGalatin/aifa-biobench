@@ -1,8 +1,14 @@
+<p align="center">
+  <img src="./assets/banner.svg" alt="AIfa-BioBench · Open FlyWire v783 Connectome Benchmarks" width="100%" />
+</p>
+
 # AIfa-BioBench
 
 ### Open, timestamped benchmarks of fly-brain-inspired algorithms — including every place where standard methods win
 
-[![Open benchmark scripts](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml/badge.svg)](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml) [![DOI](https://zenodo.org/badge/1391059995.svg)](https://zenodo.org/badge/latestdoi/1391059995) ![licence](https://img.shields.io/badge/licence-PolyForm%20Noncommercial%201.0.0-blue) ![python](https://img.shields.io/badge/python-3.10%E2%80%933.13-3776AB) ![CI](https://img.shields.io/badge/CI-Linux%20%C2%B7%20Windows%20%C2%B7%20macOS-informational) ![timestamps](https://img.shields.io/badge/OpenTimestamps-Bitcoin-F7931A) ![data](https://img.shields.io/badge/connectome-FlyWire%20v783-2E8B57)
+[![Open benchmark scripts](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml/badge.svg)](https://github.com/MaksimGalatin/aifa-biobench/actions/workflows/bench.yml) [![DOI](https://zenodo.org/badge/1391059995.svg)](https://zenodo.org/badge/latestdoi/1391059995) ![licence](https://img.shields.io/badge/licence-PolyForm%20Noncommercial%201.0.0-blue) ![tools](https://img.shields.io/badge/open%20arena%20%26%20merkle-MIT-22C55E) ![python](https://img.shields.io/badge/python-3.10%E2%80%933.13-3776AB) ![CI](https://img.shields.io/badge/CI-Linux%20%C2%B7%20Windows%20%C2%B7%20macOS-informational) ![timestamps](https://img.shields.io/badge/OpenTimestamps-Bitcoin-F7931A) ![data](https://img.shields.io/badge/connectome-FlyWire%20v783-2E8B57) [![Org](https://img.shields.io/badge/org-CodeOfDigitalEternity-1E293B)](https://github.com/CodeOfDigitalEternity)
+
+**Table of contents:** [At a glance](#at-a-glance) · [Wins and losses](#wins-and-losses) · [§1–§9 Benchmarks](#1-vector-retrieval--50000-vectors--1024-top-10-independent-queries) · [Timestamps](#timestamps--how-to-check-that-the-numbers-were-not-changed-later) · [Layout](#layout) · [Cite & License](#cite)
 
 Open, timestamped results of the benchmarks for the bio-inspired algorithms behind AIfa ACR (sparse
 "fly hash" projection, APL novelty gate, CANN ring attractor, CX steering, bilateral verifier) — and an
