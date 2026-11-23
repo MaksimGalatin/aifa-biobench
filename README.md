@@ -10,7 +10,7 @@
 
 **Table of contents:** [At a glance](#at-a-glance) · [Wins and losses](#wins-and-losses) · [§1–§9 Benchmarks](#1-vector-retrieval--50000-vectors--1024-top-10-independent-queries) · [Timestamps](#timestamps--how-to-check-that-the-numbers-were-not-changed-later) · [Layout](#layout) · [Cite & License](#cite)
 
-> **CODE Eternal Open Ecosystem:** Looking for our production AI agent memory & security engines? See [**`PADAM · NOCTURNE`**](https://github.com/MaksimGalatin/padam-nocturne) (`AGPL-3.0-only` + `Commercial MSA`, local SQLite memory + 4-ring Agentic Shield, Desktop Studio & Android APK), [**`PADAM Shield Lite`**](https://github.com/MaksimGalatin/padam-shield-mcp) (`Apache-2.0`, stateless Docker MCP gateway), and [**`AIfa Memory MCP`**](https://github.com/MaksimGalatin/aifa-memory-mcp) (`MIT` spec, hosted `v2.1.0` Streamable HTTP MCP server at [aifa.works/mcp](https://aifa.works/mcp)).
+> **CODE Eternal Open Ecosystem:** Looking for our production AI agent memory & security engines? See [**`PADAM · NOCTURNE`**](https://github.com/MaksimGalatin/padam-nocturne) (`AGPL-3.0-only` + `Commercial MSA`, local SQLite memory + 4-ring Agentic Shield, Desktop Studio & Android APK), [**`PADAM Shield Lite`**](https://github.com/MaksimGalatin/padam-shield-mcp) (`Apache-2.0`, stateless Docker MCP gateway), and [**`AIfa Memory MCP`**](https://github.com/MaksimGalatin/aifa-memory-mcp) (`MIT` spec, hosted `v2.3.0` Streamable HTTP MCP server at [aifa.works/mcp](https://aifa.works/mcp)).
 
 Open, timestamped results of the benchmarks for the bio-inspired algorithms behind AIfa ACR (sparse
 "fly hash" projection, APL novelty gate, CANN ring attractor, CX steering, bilateral verifier) — and an
