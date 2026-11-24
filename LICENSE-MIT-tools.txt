@@ -12,7 +12,7 @@ hash-stamped in results/MANIFEST_2026-10-12.sha256 (OpenTimestamps on Bitcoin), 
 From 13 October 2026 the licensor ADDITIONALLY licenses these three files under the MIT License below;
 you may use them under MIT, including commercially.
 
-Copyright (c) 2026 Maksim Valentinovich Galatin & CODE (Code of Digital Eternity) — https://aifa.works
+Copyright (c) 2026 CODE Eternal LLC — https://aifa.works
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

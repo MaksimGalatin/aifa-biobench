@@ -1,6 +1,6 @@
 # ==============================================================================
 # AIfa-BioBench: do the tests catch real bugs?
-# Copyright (c) 2026 Maksim Galatin & CODE (Code of Digital Eternity) — https://aifa.works
+# Copyright (c) 2026 CODE Eternal LLC — https://aifa.works
 # Licensed under the PolyForm Noncommercial License 1.0.0 — commercial use only under a written licence:
 # contact@codeofdigitaleternity.com
 #
