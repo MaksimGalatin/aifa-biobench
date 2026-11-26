@@ -20,9 +20,14 @@ from conftest import ROOT, RESULTS
 CHANGED_SINCE = {
     "MANIFEST_2026-09-23.sha256": {"README.md", "LICENSE", "bench/olfactory_filter_run.py", "bench/proof_of_connectome.py",
                                    "requirements.txt", "requirements-dev.txt"},
-    "MANIFEST_2026-10-05.sha256": {"README.md", "requirements.txt", "requirements-dev.txt"},
+    # 24.11.2026 (24db721): строки «Copyright …» стали «CODE Eternal LLC» в LICENSE и шапках скриптов — законная правка,
+    # логика и результаты не тронуты; манифесты заверены OpenTimestamps и не переписываются.
+    "MANIFEST_2026-10-05.sha256": {"README.md", "requirements.txt", "requirements-dev.txt",
+                                   "LICENSE", "bench/olfactory_filter_run.py", "bench/proof_of_connectome.py"},
     "MANIFEST_2026-10-12.sha256": {"README.md", "CITATION.cff", "tests/test_results_integrity.py", "bench/reproduce.py",
-                                   "requirements.txt", "requirements-dev.txt"},
+                                   "requirements.txt", "requirements-dev.txt",
+                                   "LICENSE", "bench/check_claims.py", "bench/merkle_rfc6962.py", "bench/olfactory_filter_run.py",
+                                   "bench/open_arena.py", "bench/proof_of_connectome.py", "tests/mutation/run_mutants.py"},
 }
 OTS_MAGIC = b"\x00OpenTimestamps\x00\x00Proof\x00\xbf\x89\xe2\xe8\x84\xe8\x92\x94"  # заголовок формата .ots
 
